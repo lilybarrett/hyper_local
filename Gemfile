@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'devise'
+
 gem 'foundation-rails'
 
 # Use ActiveModel has_secure_password
@@ -33,7 +35,7 @@ gem 'foundation-rails'
 # gem 'capistrano-rails', group: :development
 
 group :test do
-  gem 'coveralls', require: false 
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
@@ -43,7 +45,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
 end
