@@ -9,7 +9,8 @@ feature 'user creates an account' do
 
   scenario "user specifies valid and required info as a volunteer" do
     user = FactoryGirl.create(:user)
-    # attach_file "Profile Photo", "#(Rails.root)/spec/support/images/soldier.jpg"
+    # attach_file "Profile Photo",
+      #"#(Rails.root)/spec/support/images/soldier.jpg"
     fill_in "First Name", with: user.first_name
     fill_in "Last Name", with: user.last_name
     fill_in "Email", with: "user@example.com"
@@ -30,7 +31,8 @@ feature 'user creates an account' do
 
   # scenario "user specifies valid and required info as an organization" do
   #   org_user = FactoryGirl.create(:organization)
-  #   # attach_file "Profile Photo", "#(Rails.root)/spec/support/images/soldier.jpg"
+  #   # attach_file "Profile Photo",
+        #"#(Rails.root)/spec/support/images/soldier.jpg"
   #   fill_in "First Name", with: org_user.first_name
   #   fill_in "Last Name", with: org_user.last_name
   #   fill_in "Email", with: org_user.email
