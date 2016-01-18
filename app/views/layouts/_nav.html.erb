@@ -3,6 +3,7 @@
       <li class="name">
         <h1><%= link_to "HyperLocal", root_path %></h1>
       </li>
+
       <li class="toggle-topbar menu-icon">
         <a href="/"><span>HyperLocal</span></a>
       </li>
@@ -11,13 +12,10 @@
     <section class="top-bar-section">
       <ul class="right">
         <% if user_signed_in? %>
-          <li>
-            <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %> %>
-          </li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
         <% else %>
-        <li>
-          <%= link_to "Sign Up", new_user_registration_path %>
-        </li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
         <% end %>
       </ul>
     </section>

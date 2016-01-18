@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "home", to: "home#show"
+  #get "events", to: "home#events"
   root 'home#show'
 
   devise_for :users
