@@ -20,7 +20,7 @@ feature "user edits account" do
     visit edit_user_registration_path
 
   # attach_file 'Profile Photo',
-  # "#{Rails.root}/spec/support/images/soldier.jpg"
+  #   "#{Rails.root}/spec/support/images/soldier.jpg"
     fill_in "Email", with: "new_email@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password Confirmation", with: "newpassword"
