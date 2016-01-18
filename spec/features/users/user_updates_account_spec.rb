@@ -3,7 +3,6 @@ require "rails_helper"
 feature "user edits account" do
 
   scenario "user cannot access page without signing in" do
-    user = FactoryGirl.create(:user)
     visit edit_user_registration_path
 
     expect(page).to have_content("Sign In")
@@ -20,7 +19,8 @@ feature "user edits account" do
     click_link "Edit Account"
     visit edit_user_registration_path
 
-    # attach_file 'Profile Photo', "#{Rails.root}/spec/support/images/soldier.jpg"
+    # attach_file 'Profile Photo',
+      # "#{Rails.root}/spec/support/images/soldier.jpg"
     fill_in "Email", with: "new_email@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password Confirmation", with: "newpassword"
