@@ -1,0 +1,53 @@
+@import "foundation_and_overrides";
+$black: #000;
+$white: #ffffff;
+
+body {
+  background: url("Home_photo.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.footer {
+  background: transparent;
+  bottom: 0;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+
+  .links a {
+    border: 2px solid $white;
+    color: $white;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.5rem;
+  }
+
+}
+
+.top-bar ul li {
+  font-weight: bold;
+}
+
+.top-bar-section ul li {
+  background: transparent;
+  border: 2px solid $white;
+  font-weight: bold;
+  margin: 0.5rem 2rem;
+}
+
+.homepage {
+  margin-top: 12%;
+
+  p {
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 6px 4px 5px $black,
+      -1px -1px 0 $black,
+       1px -1px 0 $black,
+      -1px 1px 0 $black,
+       1px 1px 0 $black;
+  }
+
+}

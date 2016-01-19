@@ -18,7 +18,6 @@ feature 'user creates an account' do
 
     click_button "Sign Up"
 
-    expect(page).to have_content("Welcome")
     expect(page).to have_content("Sign Out")
   end
 

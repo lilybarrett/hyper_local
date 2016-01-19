@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
     <title><%= content_for?(:title) ? yield(:title) : "HyperLocal" %></title>
 
@@ -18,8 +19,22 @@
     <% flash.each do |key, value| %>
       <%= value %>
     <% end %>
-    
+
     <%= yield %>
+
+    <footer class="footer">
+      <div class="row">
+        <div class="small-12 columns">
+          <p class="links">
+            <% link_to "Home", root_path %>
+            <% if !user_signed_in? %>
+              <%= link_to "Join Us", new_user_registration_path %>
+              <%= link_to "Sign Into Your Account", new_user_session_path %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </footer>
 
   </body>
 </html>
