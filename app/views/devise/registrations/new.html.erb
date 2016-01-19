@@ -31,11 +31,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <%= f.label :volunteer, "Are you a volunteer or an organization?" %>
-      <%= f.select :volunteer, [ ["Volunteer", true], ["Organization", false] ] %>
-    </div>
+  <div class="volunteer field">
+    <%= f.label :volunteer, "Are you a volunteer or an organization?" %>
+    <%= f.select :volunteer, [ ["Volunteer", true], ["Organization", false] ] %>
   </div>
 
   <div class="actions">
