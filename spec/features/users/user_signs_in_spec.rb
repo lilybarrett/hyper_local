@@ -13,7 +13,6 @@ feature 'user signs in' do
     fill_in "Password", with: user.password
 
     click_button "Sign In"
-    expect(page).to have_content("Welcome")
     expect(page).to have_content("Sign Out")
   end
 
@@ -25,16 +24,16 @@ feature 'user signs in' do
 
     expect(page).to have_content("Invalid email or password.")
     expect(page).to have_content("Sign Up")
-    expect(page).to_not have_content("Welcome")
+    expect(page).to_not have_content("Sign Out")
   end
 
   scenario "user supplies existing email with wrong password" do
     user = FactoryGirl.create(:user)
     fill_in "Email", with: user.email
-    fill_in "Password", with: 'wrongpw'
+    fill_in "Password", with: "wrongpw"
     click_button 'Sign In'
 
-    expect(page).to have_content("Invalid email or password.")
+    expect(page).to have_content("Invalid")
     expect(page).to have_content("Sign Up")
     expect(page).to_not have_content("Sign Out")
   end
@@ -50,7 +49,8 @@ feature 'user signs in' do
 
     visit new_user_session_path
 
-    expect(page).to have_content("You are already signed in.")
+    expect(page).to have_content("already signed in")
     expect(page).to_not have_content("Sign In")
   end
+
 end
