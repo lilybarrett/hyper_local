@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+causes = [
+  "Climate Change",
+  "Income Inequality",
+  "Criminal Justice Reform",
+  "Education Reform",
+  "Racial Justice",
+  "Women's Issues",
+  "Immigration",
+  "Refugee Support",
+  "Technology and Privacy",
+  "Healthcare Access",
+  "LGBTQ Rights",
+  "Disability Advocacy"
+]
+
+causes.each do |cause|
+  Cause.find_or_create_by!(cause: cause)
+end
