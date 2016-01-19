@@ -5,6 +5,5 @@ class CreateCauses < ActiveRecord::Migration
     end
 
     add_index :causes, :cause, unique: true
-
   end
 end

@@ -1,3 +1,3 @@
 class Cause < ActiveRecord::Base
-  validates :cause, uniqueness: true 
+  validates :cause, uniqueness: true
 end
