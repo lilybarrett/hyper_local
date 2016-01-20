@@ -10,6 +10,10 @@ FactoryGirl.define do
     volunteer true
   end
 
+  factory :cause do
+    cause "Test"
+  end
+
   factory :organization do
     name "Girl Develop It"
     description "Girl Develop It is an organization that focuses on getting
@@ -17,6 +21,7 @@ FactoryGirl.define do
     street "Awesome St."
     city "Boston"
     state "MA"
+    cause
   end
 
   factory :org_admin do

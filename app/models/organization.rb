@@ -9,6 +9,5 @@ class Organization < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
 
-  validates :user, presence: true
   validates :cause, presence: true
 end

@@ -1,6 +1,20 @@
 <div class="row">
-  <div class="small-9 small-centered columns homepage">
+  <div class="small-9 small-centered columns homepagediv">
     <p>Ready to Change the World?</p>
-    <p class="animated zoomIn">Start With Your City.</p>
+    <p class>Start With Your City.</p>
   </div>
 </div>
+
+<footer class="footer">
+  <div class="row">
+    <div class="small-12 columns">
+      <p class="links">
+        <% link_to "Home", root_path %>
+        <% if !user_signed_in? %>
+          <%= link_to "Join Us", new_user_registration_path %>
+          <%= link_to "Sign Into Your Account", new_user_session_path %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</footer>
