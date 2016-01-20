@@ -1,5 +1,4 @@
 class OrganizationsController < ApplicationController
-
   def new
     @organization = Organization.new
     @causes = []
@@ -27,7 +26,6 @@ class OrganizationsController < ApplicationController
   def show
     @organization = Organization.find(params[:id])
   end
-
 
   private
 
