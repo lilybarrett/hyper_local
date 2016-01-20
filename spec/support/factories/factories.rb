@@ -11,7 +11,7 @@ FactoryGirl.define do
   end
 
   factory :cause do
-    cause "Test"
+    cause "Climate Change"
   end
 
   factory :organization do

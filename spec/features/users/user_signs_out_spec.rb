@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user signs out' do
+feature "user signs out" do
   scenario "an existing user specifies valid email and password" do
     user = FactoryGirl.create(:user)
 

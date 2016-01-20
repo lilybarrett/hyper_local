@@ -1,21 +1,21 @@
 class OrganizationsController < ApplicationController
 
-  # def index
-  #   # @organizations = Organization.all.order("name ASC")
-  #   @user = current_user
-  #   @organizations = @user.organizations
-  # end
-
   def new
     @organization = Organization.new
+    @causes = []
+    Cause.all.each do |cause|
+      @causes << [cause.cause, cause.id]
+    end
   end
 
   def create
-    # @user = current_user
     @organization = Organization.new(organization_params)
-    # @organization.org_admin = current_user
-
+    @user = current_user
+    @admin_list = OrgAdmin.new
+    @admin_list.user = current_user
     if @organization.save
+      @admin_list.organization = @organization
+      @admin_list.save
       flash[:notice] = "Organization successfully added!"
       redirect_to organization_path(@organization)
     else
@@ -25,17 +25,9 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-
+    @organization = Organization.find(params[:id])
   end
 
-  # def edit
-  # end
-  #
-  # def update
-  # end
-  #
-  # def destroy
-  # end
 
   private
 

@@ -6,6 +6,7 @@ feature "User adds an organization" do
     user = FactoryGirl.create(:user, volunteer: false)
     organization = FactoryGirl.create(:organization)
     org_admin = FactoryGirl.create(:org_admin, user: user, organization: organization)
+    another_cause = FactoryGirl.create(:cause, cause: "Technology and Privacy")
 
     visit new_user_registration_path
 

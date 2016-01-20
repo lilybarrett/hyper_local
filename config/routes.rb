@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get "events", to: "home#events"
   root 'home#show'
 
-  resources :organizations
+  resources :organizations, only: [:show, :new, :create, :edit, :update, :destroy]
 
 
   # resources :organizations do
