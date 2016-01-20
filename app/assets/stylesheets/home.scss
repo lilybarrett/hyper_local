@@ -2,7 +2,7 @@
 $black: #000;
 $white: #ffffff;
 
-body {
+.homepage {
   background: url("light-person-woman-fire.jpeg") no-repeat center center fixed;
   background-size: cover;
 }
@@ -37,7 +37,7 @@ body {
   margin: 0.5rem 2rem;
 }
 
-.homepage {
+.homepagediv {
   margin-top: 12%;
 
   p {

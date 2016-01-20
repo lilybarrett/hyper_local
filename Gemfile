@@ -36,6 +36,7 @@ gem 'foundation-rails', '5.5.3.2'
 
 group :test do
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 group :development, :test do
