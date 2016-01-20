@@ -40,6 +40,5 @@ class OrganizationsController < ApplicationController
       :state,
       :cause_id
     )
-
   end
 end
