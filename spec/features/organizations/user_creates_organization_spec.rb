@@ -7,8 +7,8 @@ feature "User adds an organization" do
     organization = FactoryGirl.create(:organization)
     org_admin = FactoryGirl.create(
       :org_admin,
-       user: user,
-       organization: organization)
+      user: user,
+      organization: organization)
     another_cause = FactoryGirl.create(:cause, cause: "Technology and Privacy")
 
     visit new_user_registration_path
@@ -39,8 +39,8 @@ feature "User adds an organization" do
     organization = FactoryGirl.create(:organization)
     org_admin = FactoryGirl.create(
       :org_admin,
-       user: user,
-       organization: organization)
+      user: user,
+      organization: organization)
 
     visit new_user_registration_path
     click_button "Sign Up"
