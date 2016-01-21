@@ -1,15 +1,14 @@
 class OrganizationsController < ApplicationController
-
   def index
     @organizations = Organization.all
   end
 
   def new
-      @organization = Organization.new
-      @causes = []
-      Cause.all.each do |cause|
-        @causes << [cause.cause, cause.id]
-      end
+    @organization = Organization.new
+    @causes = []
+    Cause.all.each do |cause|
+      @causes << [cause.cause, cause.id]
+    end
   end
 
   def create
