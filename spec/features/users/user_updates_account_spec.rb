@@ -1,4 +1,4 @@
-require "rails_helper"
+  require "rails_helper"
 
 feature "user edits account" do
 
@@ -31,6 +31,24 @@ feature "user edits account" do
     expect(page).to have_content("Sign Out")
     # expect(page).to have_css("img[src*='soldier.jpg']")
   end
+
+  scenario "an existing volunteer changes designation to organization" do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign In"
+
+    click_link "Edit Account"
+    select 'Organization', from: "Are you a volunteer or an organization?"
+    fill_in "Current Password", with: user.password
+    click_button "Update"
+    expect(page).to have_content("Register Your Organization")
+  end
+
+  # scenario "an exiting org_admin changes designation to volunteer" do
+  #
+  # end
 
   # scenario "user uploads non-image file" do
   #   sign_in(@user)
