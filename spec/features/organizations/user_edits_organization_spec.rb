@@ -37,7 +37,7 @@ feature "org_admin updates organization" do
 
      fill_in "Street Address", with: " "
      click_on "Update"
-     
+
      expect(page).not_to have_content("successfully updated")
    end
 

@@ -3,7 +3,9 @@ $black: #000;
 $white: #ffffff;
 
 .homepage {
-  background: url("light-person-woman-fire.jpeg") no-repeat center center fixed;
+  background-image: image-url("light-person-woman-fire.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center fixed;
   background-size: cover;
 }
 
