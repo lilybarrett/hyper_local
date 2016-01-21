@@ -37,13 +37,13 @@ feature "org_admin updates organization" do
 
      fill_in "Street Address", with: " "
      click_on "Update"
-
+     
      expect(page).not_to have_content("successfully updated")
    end
 
    scenario "unauthenticated org_admin cannot edit entry" do
      visit organization_path(organization)
-     
+
      expect(page).not_to have_content("Edit Info")
    end
 
