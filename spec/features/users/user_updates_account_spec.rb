@@ -47,7 +47,17 @@ feature "user edits account" do
   end
 
   # scenario "an exiting org_admin changes designation to volunteer" do
+  #   user_2 = FactoryGirl.create(:user)
+  #   visit new_user_session_path
+  #   fill_in "Email", with: user.email
+  #   fill_in "Password", with: user.password
+  #   click_button "Sign In"
   #
+  #   click_link "Edit Account"
+  #   select 'Organization', from: "Are you a volunteer or an organization?"
+  #   fill_in "Current Password", with: user.password
+  #   click_button "Update"
+  #   expect(page).to have_content("Register Your Organization")
   # end
 
   # scenario "user uploads non-image file" do

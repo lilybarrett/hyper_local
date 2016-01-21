@@ -8,6 +8,7 @@ feature "org_admin updates organization" do
     :org_admin,
     user: user,
     organization: organization) }
+  let!(:another_cause) { FactoryGirl.create(:cause, cause: "Technology and Privacy") }
 
   scenario "org_admin visits update page for organization" do
     sign_in(user)
