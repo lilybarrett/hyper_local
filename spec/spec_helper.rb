@@ -23,13 +23,3 @@ def sign_in(user)
 
   click_button "Sign In"
 end
-
-def sign_up(organization)
-  fill_in "Organization Name", with: organization.name
-  fill_in "Street Address", with: organization.street
-  fill_in "City", with: organization.city
-  fill_in "Description", with: organization.description
-  fill_in "State", with: organization.state
-  select "Technology and Privacy", from: "What's Your Cause?"
-  click_button "Register"
-end

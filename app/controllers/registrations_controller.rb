@@ -8,4 +8,13 @@ class RegistrationsController < Devise::RegistrationsController
       new_organization_path
     end
   end
+
+  def after_update_up_path_for(_resource)
+    if @user.volunteer?
+      root_path
+    else
+      new_organization_path
+    end
+  end
+  
 end

@@ -48,6 +48,10 @@ class OrganizationsController < ApplicationController
 
   def update
     @organization = Organization.find(params[:id])
+    @causes = []
+    Cause.all.each do |cause|
+      @causes << [cause.cause, cause.id]
+    end
     if @organization.update_attributes(organization_params)
       flash[:notice] = "Organization successfully updated"
       redirect_to organization_path(@organization)
