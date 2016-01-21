@@ -28,8 +28,8 @@ feature "org_admin updates organization" do
 
     click_on "Update"
 
-    visit organization_path(organization)
     expect(page).to have_content "Another Street"
+    expect(page).to have_content "successfully updated"
 
   end
   #
