@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe Organization do
   it { should belong_to(:cause) }
 

@@ -5,7 +5,8 @@
 
       <div id="organization-profile">
         <h1>Edit Organization Info</h1>
-        <%= form_for @organization do |f| %>
+        <%= form_for(@organization, url: organization_path(@organization),
+          html: {method: "patch"}) do |f| %>
           <div class="field">
             <%= f.label :name, "Organization Name" %>
             <%= f.text_field :name %>

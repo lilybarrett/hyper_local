@@ -19,16 +19,16 @@ feature "org_admin updates organization" do
   end
 
   scenario "org_admin successfully fills out update form" do
-
     sign_in(user)
+
     visit organization_path(organization)
-    click_link "Edit Info"
-    expect(page).to have_content("Edit Organization Info")
+    click_on "Edit Info"
 
     fill_in "Street Address", with: "Another Street"
 
-    click_button "Update"
+    click_on "Update"
 
+    visit organization_path(organization)
     expect(page).to have_content "Another Street"
 
   end
