@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'home#show'
 
   resources :organizations, only:
-    [:show, :new, :create, :edit, :update, :destroy]
+    [:index, :show, :new, :create, :edit, :update, :destroy]
 
 
   # resources :organizations do

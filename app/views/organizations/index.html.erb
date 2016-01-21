@@ -1,0 +1,7 @@
+<h1>All Registered Organizations</h1>
+
+<% @organizations.each do |organization| %>
+<ul>
+  <li><%= link_to "#{organization.name}", organization_path(organization) %></li>
+</ul>
+<% end %>

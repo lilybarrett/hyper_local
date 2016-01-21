@@ -1,4 +1,8 @@
 class OrganizationsController < ApplicationController
+  def index
+    @organizations = Organization.all
+  end
+
   def new
     @organization = Organization.new
     @causes = []
@@ -25,6 +29,35 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
+  end
+
+  def edit
+    @organization = Organization.find(params[:id])
+    @causes = []
+    Cause.all.each do |cause|
+      @causes << [cause.cause, cause.id]
+    end
+    if Organization.org_admins(current_user, @organization)
+      render :edit
+    else
+      flash[:message] = "You are not authorized to view this page."
+      render :show
+    end
+  end
+
+  def update
+    @organization = Organization.find(params[:id])
+    @causes = []
+    Cause.all.each do |cause|
+      @causes << [cause.cause, cause.id]
+    end
+    if @organization.update_attributes(organization_params)
+      flash[:notice] = "Organization successfully updated"
+      redirect_to organization_path(@organization)
+    else
+      flash[:error] = "Please fill out all required fields."
+      render :edit
+    end
   end
 
   private
