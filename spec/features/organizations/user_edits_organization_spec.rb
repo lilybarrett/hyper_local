@@ -25,8 +25,9 @@ feature "org_admin updates organization" do
     click_on "Edit Info"
 
     fill_in "Street Address", with: "Another Street"
-
     click_on "Update"
+
+    save_and_open_page
 
     expect(page).to have_content "Another Street"
     expect(page).to have_content "successfully updated"

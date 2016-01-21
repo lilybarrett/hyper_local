@@ -1,14 +1,15 @@
 class OrganizationsController < ApplicationController
+
+  def index
+    @organizations = Organization.all
+  end
+
   def new
-    # if @user.volunteer?
       @organization = Organization.new
       @causes = []
       Cause.all.each do |cause|
         @causes << [cause.cause, cause.id]
       end
-    # else
-    #   flash[:message] = "You must be representing an organization in order to view this page."
-    # end
   end
 
   def create
