@@ -33,6 +33,10 @@ class OrganizationsController < ApplicationController
 
   def edit
     @organization = Organization.find(params[:id])
+    @causes = []
+    Cause.all.each do |cause|
+      @causes << [cause.cause, cause.id]
+    end
     if Organization.org_admins(current_user, @organization)
       render :edit
     else
