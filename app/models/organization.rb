@@ -12,7 +12,8 @@ class Organization < ActiveRecord::Base
   validates :cause_id, presence: true
 
   def self.org_admins(user, organization)
-    return true if
-      !OrgAdmin.where(user: user, organization: organization).empty?
+    if !OrgAdmin.where(user: user, organization: organization).empty?
+      return true
+    end
   end
 end

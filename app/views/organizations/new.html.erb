@@ -32,15 +32,8 @@
           </div>
 
           <div class="field">
-              <%= f.label :cause_id, "What's Your Cause?" %>
-              <%= f.select(:cause_id) do %>
-              <% @causes.each do |cause| %>
-                <%= content_tag(:option, cause.first, value: cause.last) %>
-              <% end %>
-            <% end %>
-          </div>
-
-
+            <%= f.label :cause_id, "What's Your Cause?" %>
+            <%= f.collection_select(:cause_id, Cause.all, :id, :cause) %>
           </div>
 
           <div class="actions">
@@ -50,5 +43,5 @@
 
         </div>
       </div>
-
     </div>
+  </div>
