@@ -6,13 +6,12 @@ Rails.application.routes.draw do
   root 'home#show'
 
   resources :organizations, only:
-    [:show, :new, :create, :edit, :update, :destroy]
+    [:show, :new, :create, :edit, :update, :destroy] do
+      resources :opportunities, only:
+        [:new, :create, :edit, :update, :show, :destroy]
+    end
 
-
-  # resources :organizations do
-  #   resources :opportunities
-  # end
-  #
+  resources :opportunities, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

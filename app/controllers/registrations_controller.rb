@@ -14,6 +14,6 @@ class RegistrationsController < Devise::RegistrationsController
       root_path
     else
       new_organization_path
-    end 
+    end
   end
 end
