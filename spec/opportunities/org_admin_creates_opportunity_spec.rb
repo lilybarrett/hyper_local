@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "user creates an opportunity for an organization" do
+feature "an authenticated org_admin creates an opportunity for an organization" do
 
   let!(:user) { FactoryGirl.create(:user, volunteer: false) }
   let!(:organization) { FactoryGirl.create(:organization) }
@@ -60,7 +60,7 @@ feature "user creates an opportunity for an organization" do
   end
 
   scenario "an authenticated org_admin cannot add an opportunity for an
-    organiztion other than his or her own" do
+    opportunity other than his or her own" do
     user_2 = FactoryGirl.create(:user, volunteer: false)
     sign_in(user_2)
 

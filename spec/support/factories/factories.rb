@@ -11,7 +11,7 @@ FactoryGirl.define do
   end
 
   factory :cause do
-    cause "Climate Change"
+    sequence(:cause) { |n| "Cause-#{n}"}
   end
 
   factory :organization do
@@ -26,6 +26,18 @@ FactoryGirl.define do
 
   factory :org_admin do
     user
+    organization
+  end
+
+  factory :opportunity do
+    description "Lead an HTML/CSS workshop for middle school girls"
+    capacity 2
+    street "Awesome St"
+    city "Boston"
+    state "MA"
+    date Date.today.to_s
+    start_time "2:00 PM"
+    end_time "4:00 PM"
     organization
   end
 end

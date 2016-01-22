@@ -12,7 +12,7 @@ class OpportunitiesController < ApplicationController
     @organization = Organization.find(params[:organization_id])
     @opportunity = @organization.opportunities.new(opportunity_params)
     if @opportunity.save
-      redirect_to organization_opportunity_path(@organization, @opportunity)
+      redirect_to opportunity_path(@opportunity)
     else
       flash[:error] = @opportunity.errors.full_messages.join('. ')
       render :new
@@ -20,8 +20,32 @@ class OpportunitiesController < ApplicationController
   end
 
   def show
+    # @organization = Organization.find(params[:organization_id])
+    @opportunity = Opportunity.find(params[:id])
+    @organization = @opportunity.organization
+  end
+
+  def edit
     @organization = Organization.find(params[:organization_id])
-    @opportunities = @organization.opportunities
+    @opportunity = Opportunity.find(params[:id])
+    if Organization.org_admins(current_user, @organization)
+      render :edit
+    else
+      flash[:message] = "You are not authorized to view this page."
+      render :show
+    end
+  end
+
+  def update
+    @organization = Organization.find(params[:id])
+    @opportunity = @organization.opportunity
+    if @opportunity.update_attributes(opportunity_params)
+      flash[:notice] = "Opportunity successfully updated"
+      redirect_to organization_opportunity_path(@organization, @opportunity)
+    else
+      flash[:error] = "Please fill out all required fields."
+      render :edit
+    end
   end
 
   private

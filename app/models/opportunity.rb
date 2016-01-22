@@ -1,5 +1,6 @@
 class Opportunity < ActiveRecord::Base
   belongs_to :organization
+  has_many :volunteer_lists
   has_many :users, through: :volunteer_lists
 
   validates :description, presence: true
