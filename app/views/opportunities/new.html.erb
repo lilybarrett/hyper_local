@@ -1,0 +1,58 @@
+<div class="page-background">
+
+  <div class="row">
+    <div class="small-6 small-centered columns form">
+
+      <div id="organization-profile">
+        <h1>Add an Opportunity for <%= @organization.name %></h1>
+        <%= form_for [@organization, @opportunity] do |f| %>
+
+          <div class="field">
+            <%= f.label :description, "Description" %>
+            <%= f.text_field :description %>
+          </div>
+
+          <div class="field">
+            <%= f.label :capacity, "Capacity" %>
+            <%= f.number_field :capacity %>
+          </div>
+
+          <div class="field">
+            <%= f.label :street, "Street Address" %>
+            <%= f.text_field :street %>
+          </div>
+
+          <div class="field">
+            <%= f.label :city, "City" %>
+            <%= f.text_field :city %>
+          </div>
+
+          <div class="field">
+            <%= f.label :state, "State" %>
+            <%= f.text_field :state %>
+          </div>
+
+          <div class="field">
+            <%= f.label :date, "Date" %>
+            <%= f.date_field :date %>
+          </div>
+
+          <div class="field">
+            <%= f.label :start_time, "Starts At:" %>
+            <%= f.time_field :start_time %>
+          </div>
+
+          <div class="field">
+            <%= f.label :end_time, "Ends At:" %>
+            <%= f.time_field :end_time %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Add to Site", class: "button round" %>
+          </div>
+        <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>

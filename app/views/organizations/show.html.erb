@@ -14,4 +14,5 @@
 
 <% if Organization.org_admins(current_user, @organization) %>
   <%= link_to "Edit Info", edit_organization_path(@organization), class: "button round" %>
+  <%= link_to "Add Opportunity", new_organization_opportunity_path(@organization), class: "button round" %>
 <% end %>

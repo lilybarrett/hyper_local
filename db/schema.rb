@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119163018) do
+ActiveRecord::Schema.define(version: 20160122163042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(version: 20160119163018) do
   end
 
   add_index "causes", ["cause"], name: "index_causes_on_cause", unique: true, using: :btree
+
+  create_table "opportunities", force: :cascade do |t|
+    t.string   "description",     null: false
+    t.integer  "capacity",        null: false
+    t.string   "street",          null: false
+    t.string   "city",            null: false
+    t.string   "state",           null: false
+    t.date     "date",            null: false
+    t.time     "start_time",      null: false
+    t.time     "end_time",        null: false
+    t.integer  "organization_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "org_admins", id: false, force: :cascade do |t|
     t.integer "user_id",         null: false
@@ -56,5 +70,10 @@ ActiveRecord::Schema.define(version: 20160119163018) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "volunteer_lists", id: false, force: :cascade do |t|
+    t.integer "user_id",        null: false
+    t.integer "opportunity_id", null: false
+  end
 
 end
