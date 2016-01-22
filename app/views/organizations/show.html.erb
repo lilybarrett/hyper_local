@@ -13,5 +13,5 @@
 <%= link_to "See All", organizations_path, class: "button round" %>
 
 <% if Organization.org_admins(current_user, @organization) %>
-    <%= link_to "Edit Info", edit_organization_path(@organization), class: "button round" %>
+  <%= link_to "Edit Info", edit_organization_path(@organization), class: "button round" %>
 <% end %>

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
+  resources :users, :only => [:show]
   get "home", to: "home#show"
   # get "events", to: "home#events"
   root 'home#show'
 
   resources :organizations, only:
-    [:index, :show, :new, :create, :edit, :update, :destroy]
+    [:show, :new, :create, :edit, :update, :destroy]
 
 
   # resources :organizations do
