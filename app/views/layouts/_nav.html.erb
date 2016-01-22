@@ -11,9 +11,9 @@
 
     <section class="top-bar-section">
       <ul class="right">
-        <li><%= link_to "Organizations", organizations_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to "My Profile", current_user %></li>
           <li><%= link_to "Edit Account", edit_user_registration_path %></li>
         <% else %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
