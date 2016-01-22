@@ -27,10 +27,12 @@ feature "user creates an opportunity for an organization" do
 
     click_on "Add to Site"
 
-    expect(page).to have_content "Description: Lead an HTML/CSS workshop for middle school girls"
+    expect(page).to have_content
+      "Description: Lead an HTML/CSS workshop for middle school girls"
   end
 
-  scenario "an authenticated org_admin does not provide required information for an opportunity" do
+  scenario "an authenticated org_admin does not provide required information
+    for an opportunity" do
     sign_in(user)
     visit organization_path(organization)
     click_on "Add Opportunity"

@@ -11,12 +11,12 @@ class OpportunitiesController < ApplicationController
   def create
     @organization = Organization.find(params[:organization_id])
     @opportunity = @organization.opportunities.new(opportunity_params)
-      if @opportunity.save
-        redirect_to organization_opportunity_path(@organization, @opportunity)
-      else
-        flash[:error] = @opportunity.errors.full_messages.join('. ')
-        render :new
-      end
+    if @opportunity.save
+      redirect_to organization_opportunity_path(@organization, @opportunity)
+    else
+      flash[:error] = @opportunity.errors.full_messages.join('. ')
+      render :new
+    end
   end
 
   def show
@@ -39,5 +39,4 @@ class OpportunitiesController < ApplicationController
       :organization_id
     )
   end
-
 end

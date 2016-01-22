@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   resources :organizations, only:
     [:show, :new, :create, :edit, :update, :destroy] do
-      resources :opportunities, only: [:new, :create, :edit, :update, :show, :destroy]
+      resources :opportunities, only: [:new, :create, :edit,
+        :update, :show, :destroy]
     end
 
   resources :opportunities, only: [:index]

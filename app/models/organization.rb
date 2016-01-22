@@ -1,7 +1,7 @@
 class Organization < ActiveRecord::Base
   has_many :org_admins
   has_many :users, through: :org_admins
-  has_many :opportunities 
+  has_many :opportunities
   belongs_to :cause
 
   validates :name, presence: true
