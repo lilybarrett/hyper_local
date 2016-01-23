@@ -14,7 +14,6 @@ feature "org_admin deletes opportunity" do
 
     sign_in(user)
     visit organization_path(organization)
-    save_and_open_page
     click_on "Remove Opportunity"
 
     expect(page).to have_content organization.name
