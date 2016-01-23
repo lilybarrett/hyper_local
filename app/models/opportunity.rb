@@ -6,7 +6,8 @@ class Opportunity < ActiveRecord::Base
 
   validates :description, presence: true
   validates :capacity, presence: true, numericality: {
-    only_integer: true
+    only_integer: true,
+    greater_than_or_equal_to: 1
   }
   validates :street, presence: true
   validates :city, presence: true
@@ -15,4 +16,6 @@ class Opportunity < ActiveRecord::Base
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :organization_id, presence: true
+
+  scope :upcoming, -> { where("opportunities.date >= ?", Date.today)}
 end
