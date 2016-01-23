@@ -9,6 +9,16 @@
   <li><%= @organization.state %></li>
 </ul>
 
+<h2>Organization opportunities</h2>
+<ul>
+  <% @opportunities.each do |opportunity| %>
+    <li><%= opportunity.description %></li>
+    <% if Organization.org_admins(current_user, @organization) %>
+      <li><%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity) %></li>
+    <% end %>
+</ul>
+<% end %>
+
 <%= link_to "Home", root_path, class: "button round" %>
 <%= link_to "See All", organizations_path, class: "button round" %>
 

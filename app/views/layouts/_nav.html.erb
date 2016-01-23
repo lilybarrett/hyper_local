@@ -11,6 +11,7 @@
 
     <section class="top-bar-section">
       <ul class="right">
+          <li><%= link_to "View All Opportunities", opportunities_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
           <li><%= link_to "My Profile", current_user %></li>
