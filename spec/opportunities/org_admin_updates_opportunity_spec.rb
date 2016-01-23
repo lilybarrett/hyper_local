@@ -12,12 +12,11 @@ feature "user edits an opportunity for an organization" do
 
   scenario "an authenticated org_admin successfully edits an opportunity" do
     sign_in(user)
-    visit organization_path(organization)
-    click_on "Change Opportunity Info"
+    visit edit_opportunity_path(opportunity)
 
     fill_in "Capacity", with: 6
 
-    click_on "Add to Site"
+    click_on "Update"
 
     expect(page).to have_content
       "Description: Lead an HTML/CSS workshop for middle school girls"
@@ -25,12 +24,11 @@ feature "user edits an opportunity for an organization" do
 
   scenario "an authenticated org_admin unsuccessfully edits an opportunity" do
     sign_in(user)
-    visit organization_path(organization)
-    click_on "Change Opportunity Info"
+    visit edit_opportunity_path(opportunity)
 
     fill_in "Capacity", with: " "
 
-    click_on "Add to Site"
+    click_on "Update"
 
     expect(page).to have_content "Please fill out all required fields."
   end

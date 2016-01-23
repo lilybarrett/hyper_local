@@ -20,7 +20,6 @@ class OpportunitiesController < ApplicationController
   end
 
   def show
-    # @organization = Organization.find(params[:organization_id])
     @opportunity = Opportunity.find(params[:id])
     @organization = @opportunity.organization
   end
@@ -32,8 +31,6 @@ class OpportunitiesController < ApplicationController
   def update
     @opportunity = Opportunity.find(params[:id])
     @organization = @opportunity.organization
-    # @organization = Organization.find(params[:id])
-    # @opportunity = @organization.opportunity
     if @opportunity.update_attributes(opportunity_params)
       flash[:notice] = "Opportunity successfully updated"
       redirect_to organization_path(@organization)
