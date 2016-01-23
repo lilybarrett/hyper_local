@@ -12,12 +12,11 @@ feature "user edits an opportunity for an organization" do
 
   scenario "an authenticated org_admin successfully edits an opportunity" do
     sign_in(user)
-    visit opportunity_path(opportunity)
-    click_on "Change Opportunity Info"
+    visit edit_opportunity_path(opportunity)
 
     fill_in "Capacity", with: 6
 
-    click_on "Add to Site"
+    click_on "Update"
 
     expect(page).to have_content
       "Description: Lead an HTML/CSS workshop for middle school girls"
@@ -25,18 +24,17 @@ feature "user edits an opportunity for an organization" do
 
   scenario "an authenticated org_admin unsuccessfully edits an opportunity" do
     sign_in(user)
-    visit opportunity_path(opportunity)
-    click_on "Change Opportunity Info"
+    visit edit_opportunity_path(opportunity)
 
     fill_in "Capacity", with: " "
 
-    click_on "Add to Site"
+    click_on "Update"
 
     expect(page).to have_content "Please fill out all required fields."
   end
 
   scenario "an unauthenticated org_admin cannot edit an opportunity" do
-    visit opportunity_path(opportunity)
+    visit organization_path(organization)
 
     expect(page).not_to have_content("Change Opportunity Info")
   end
@@ -46,7 +44,7 @@ feature "user edits an opportunity for an organization" do
     user_2 = FactoryGirl.create(:user, volunteer: false)
     sign_in(user_2)
 
-    visit opportunity_path(opportunity)
+    visit organization_path(organization)
     expect(page).not_to have_content("Change Opportunity Info")
   end
 
@@ -55,7 +53,7 @@ feature "user edits an opportunity for an organization" do
     user_3 = FactoryGirl.create(:user, volunteer: true)
     sign_in(user_3)
 
-    visit opportunity_path(opportunity)
+    visit organization_path(organization)
     expect(page).not_to have_content("Change Opportunity Info")
   end
 end

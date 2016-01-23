@@ -1,9 +1,9 @@
 <h1>All Opportunities</h1>
 
 <ul>
-  @opportunities.each do |opportunity|
-    <li>opportunity.description</li>
-    <li>opportunity.date</li>
-    <p><%= link_to "Learn More!", opportunity_path(opportunity)</p>
+  <% @opportunities.each do |opportunity| %>
+    <li><%= opportunity.description %></li>
+    <li><%= opportunity.date %></li>
+    <p><%= link_to "Learn More!", opportunity_path(opportunity)%></p>
   <% end %>
 </ul>

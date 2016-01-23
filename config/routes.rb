@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   resources :organizations, only:
     [:show, :new, :create, :edit, :update, :destroy] do
       resources :opportunities, only:
-        [:new, :create, :edit, :update, :destroy]
+        [:new, :create, :destroy]
     end
 
-  resources :opportunities, only: [:index, :show,]
+  resources :opportunities, only: [:index, :show, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
