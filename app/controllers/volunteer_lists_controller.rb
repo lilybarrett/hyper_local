@@ -9,7 +9,7 @@ class VolunteerListsController < ApplicationController
        flash[:notice] = "Thanks for volunteering with us! Let's make a difference together!"
        redirect_to opportunity_path(@opportunity)
      else
-       flash[:errors] = @volunteer_list.errors.full_messages.join(". ")
+       flash[:notice] = "You're already signed up for this activity!"
        redirect_to opportunity_path(@opportunity)
      end
   end
