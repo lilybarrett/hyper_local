@@ -1,0 +1,15 @@
+<li><%= @opportunity.description %></li>
+<li><%= @opportunity.date %></li>
+
+<h2>Coming Soon...</h2>
+
+<% if user_signed_in? %>
+  <%= button_to "Join", opportunity_volunteer_lists_path(@opportunity) %>
+<% end %>
+
+<h2>Members</h2>
+<ul>
+<% @volunteers.each do |volunteer| %>
+  <li><%= volunteer.first_name %><%= volunteer.last_name.first %></li>
+<% end %>
+</ul>

@@ -1,6 +1,6 @@
 class OpportunitiesController < ApplicationController
   def index
-    @opportunities = Opportunity.all
+    @opportunities = Opportunity.upcoming
   end
 
   def new
@@ -22,6 +22,7 @@ class OpportunitiesController < ApplicationController
   def show
     @opportunity = Opportunity.find(params[:id])
     @organization = @opportunity.organization
+    @volunteers = @opportunity.users
   end
 
   def edit
