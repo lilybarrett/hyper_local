@@ -11,7 +11,9 @@ Rails.application.routes.draw do
         [:new, :create, :destroy]
     end
 
-  resources :opportunities, only: [:index, :show, :edit, :update]
+  resources :opportunities, only: [:index, :show, :edit, :update] do
+    resources :volunteer_lists, only: [:create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -2,3 +2,9 @@
 <li><%= @opportunity.date %></li>
 
 <h2>Coming Soon...</h2>
+
+<% if user_signed_in? %>
+  <%= button_to "Join", opportunity_volunteer_lists_path(@opportunity) %>
+<% end %>
+
+<h2>Members</h2>
