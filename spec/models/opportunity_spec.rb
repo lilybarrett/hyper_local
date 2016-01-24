@@ -5,7 +5,7 @@ describe Opportunity do
 
   it { should have_valid(:description).when(
     "Lead an HTML/CSS workshop for middle school girls")
-    }
+  }
   it { should_not have_valid(:description).when(nil, "") }
 
   it { should have_valid(:capacity).when(2, 50) }

@@ -8,7 +8,7 @@ feature "user views upcoming opportunities on site" do
     :org_admin,
     user: user,
     organization: organization)
-    }
+  }
   let!(:opportunity) { FactoryGirl.create(:opportunity) }
 
   scenario "a user only sees upcoming opportunities" do
