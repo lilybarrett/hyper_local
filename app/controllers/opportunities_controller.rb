@@ -22,7 +22,7 @@ class OpportunitiesController < ApplicationController
   def show
     @opportunity = Opportunity.find(params[:id])
     @organization = @opportunity.organization
-    # @volunteers = @opportunity.users
+    @volunteers = @opportunity.users
   end
 
   def edit
