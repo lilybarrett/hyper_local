@@ -333,16 +333,16 @@ $body-font-family: 'Montserrat', sans-serif;
 // $include-html-accordion-classes: $include-html-classes;
 
 // $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: $silver;
-// $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
+$accordion-navigation-bg-color: #FF851B;
+$accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
-// $accordion-navigation-active-font-color: $jet;
-// $accordion-navigation-font-color: $jet;
+$accordion-navigation-active-font-color: white;
+$accordion-navigation-font-color: white;
 // $accordion-navigation-font-size: rem-calc(16);
 // $accordion-navigation-font-family: $body-font-family;
 
 // $accordion-content-padding: ($column-gutter/2);
-// $accordion-content-active-bg-color: $white;
+$accordion-content-active-bg-color: #496d7b;
 
 // 02. Alert Boxes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1423,7 +1423,7 @@ $topbar-margin-bottom: 0;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $jet;
+$topbar-link-bg-hover: #FF851B;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

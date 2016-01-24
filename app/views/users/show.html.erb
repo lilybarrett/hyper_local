@@ -1,21 +1,31 @@
-Personal Profile
-<ul>
-  <li><%= @user.first_name %></li>
-  <li><%= @user.email %></li>
-</ul>
+<div class="page-background">
 
-<% if !current_user.volunteer? %>
-  <h3>My Organizations</h3>
-  <ul>
-    <% @organizations.each do |organization| %>
-      <li><%= link_to organization.name, organization_path(organization) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <h3>My Opportunities</h3>
-  <ul>
-    <% @opportunities.each do |opportunity| %>
-    <li><%= link_to opportunity.description, opportunity_path(opportunity) %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <div class="row">
+    <div class="small-5 columns personal-panel">
+        <p><strong>Personal Information</strong></p>
+          <ul>
+            <li><%= @user.first_name %></li>
+            <li><%= @user.email %></li>
+          </ul>
+          <%= link_to "Edit My Information", edit_user_registration_path %>
+    </div>
+    <div class="small-5 columns my-opportunities">
+      <% if !current_user.volunteer? %>
+        <h3>My Organizations</h3>
+        <ul>
+          <% @organizations.each do |organization| %>
+            <li><%= link_to organization.name, organization_path(organization) %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h3>My Upcoming Opportunities</h3>
+        <ul>
+          <% @opportunities.each do |opportunity| %>
+          <li><%= link_to opportunity.description, opportunity_path(opportunity) %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
+</div>

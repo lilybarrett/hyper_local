@@ -4,7 +4,7 @@
       <div class="small-6 medium-12 columns">
         <header>
           <h1>Passionate about <%= @opportunity.organization.cause.cause %>?</h1>
-          <h2>Volunteer with <span id="org-name"><%= link_to @opportunity.organization.name, organization_path(@organization) %></span>!</h2>
+          <h2 id="org-name">Volunteer with <%= link_to @opportunity.organization.name, organization_path(@organization) %>!</h2>
         </header>
       </div>
     </div>
@@ -33,7 +33,7 @@
         </p>
 
         <p>
-          <strong>Capacity:</strong><%= @opportunity.capacity %>
+          <strong>Capacity:</strong> <%= @opportunity.capacity %>
         </p>
 
         <p>
