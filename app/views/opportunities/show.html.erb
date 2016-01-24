@@ -1,15 +1,54 @@
-<li><%= @opportunity.description %></li>
-<li><%= @opportunity.date %></li>
+<div class="page-background">
 
-<h2>Coming Soon...</h2>
+    <div class="row">
+      <div class="small-6 medium-12 columns">
+        <header>
+          <h1>Passionate about <%= @opportunity.organization.cause.cause %>?</h1>
+          <h2>Volunteer with <span id="org-name"><%= link_to @opportunity.organization.name, organization_path(@organization) %></span>!</h2>
+        </header>
+      </div>
+    </div>
 
-<% if user_signed_in? %>
-  <%= button_to "Join", opportunity_volunteer_lists_path(@opportunity) %>
-<% end %>
+    <div class="row">
+      <div class="small-4 small-centered columns">
+        <% if user_signed_in? %>
+            <%= button_to "Join Us!", opportunity_volunteer_lists_path(@opportunity), class: "button large expand join-button" %>
+          <% end %>
+      </div>
+    </div>
 
-<h2>Members</h2>
-<ul>
-<% @volunteers.each do |volunteer| %>
-  <li><%= volunteer.first_name %><%= volunteer.last_name.first %></li>
-<% end %>
-</ul>
+    <div class="row">
+      <div class="small-5 columns vol-panel">
+          <p><strong>Volunteers</strong></p>
+            <% @volunteers.each do |volunteer| %>
+              <p><%= volunteer.first_name %><%= volunteer.last_name.first %></p>
+            <% end %>
+      </div>
+      <div class="small-5 columns opportunity-info">
+        <p>
+          <strong>What It's All about:</strong>
+        </p>
+        <p>
+          <%= @opportunity.description %>
+        </p>
+
+        <p>
+          <strong>Capacity:</strong><%= @opportunity.capacity %>
+        </p>
+
+        <p>
+          <strong>Date:</strong> <%= @opportunity.date.strftime("%m/%d/%Y") %>
+        </p>
+        <p>
+          <strong>Time:</strong> <%= @opportunity.start_time.strftime("%I:%M%p") %>-<%= @opportunity.end_time.strftime("%I:%M%p") %>
+        </p>
+        <p>
+          <strong>Location:</strong>
+        </p>
+        <p>
+          <%= @opportunity.street %>, <%= @opportunity.city %>, <%= @opportunity.state %>
+        </p>
+      </div>
+    </div>
+
+</div>

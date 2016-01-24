@@ -19,24 +19,12 @@ $white: #ffffff;
   width: 100%;
 
   .links a {
-    border: 2px solid $white;
+    border: 2px solid #FF851B;
     color: $white;
     font-weight: bold;
     margin: 0;
     padding: 0.5rem;
   }
-
-}
-
-.top-bar ul li {
-  font-weight: bold;
-}
-
-.top-bar-section ul li {
-  background: transparent;
-  border: 2px solid $white;
-  font-weight: bold;
-  margin: 0.5rem 2rem;
 }
 
 .homepagediv {
