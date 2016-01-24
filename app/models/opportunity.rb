@@ -16,5 +16,5 @@ class Opportunity < ActiveRecord::Base
   validates :end_time, presence: true
   validates :organization_id, presence: true
 
-  scope :upcoming, -> { where("opportunities.date >= ?", Date.today)}
+  scope :upcoming, -> { where("opportunities.date >= ?", Date.today) }
 end
