@@ -3,8 +3,9 @@ require 'rails_helper'
 describe Opportunity do
   it { should belong_to(:organization) }
 
-  it { should have_valid(:description).when("Lead an HTML/CSS workshop for
-    middle school girls") }
+  it { should have_valid(:description).when(
+    "Lead an HTML/CSS workshop for middle school girls")
+    }
   it { should_not have_valid(:description).when(nil, "") }
 
   it { should have_valid(:capacity).when(2, 50) }
