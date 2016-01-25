@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def show
-    # @causes = Cause.all
+    @causes = Cause.all
   end
 
   # def events

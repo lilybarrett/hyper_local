@@ -1,0 +1,18 @@
+<div class="page-background">
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <% if @opportunities.none? %>
+        <h1 class="results">Sorry! No matches yet.</h1>
+      <% else %>
+        <h1 class="results">All Results</h1>
+        <ul>
+          <% @opportunities.each do |opportunity| %>
+            <li>
+              <%= link_to opportunity.description, opportunity_path(opportunity) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

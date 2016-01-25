@@ -27,6 +27,8 @@ gem 'foundation-rails', '5.5.3.2'
 
 gem 'dotenv-rails'
 
+gem 'pg_search'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

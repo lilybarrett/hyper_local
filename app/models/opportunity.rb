@@ -1,5 +1,14 @@
 class Opportunity < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_by_city,
+    against: [:city]
+  pg_search_scope :search_by_cause,
+    associated_against: {
+    cause: [:cause]
+  }
+
   belongs_to :organization
+  has_one :cause, through: :organization
   has_many :volunteer_lists
   has_many :users, through: :volunteer_lists
 
