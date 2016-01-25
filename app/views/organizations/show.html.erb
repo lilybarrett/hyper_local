@@ -1,33 +1,45 @@
-<h1><%= @organization.name %></h1>
-<h2><%= @organization.cause.cause %></h2>
+<div class="page-background">
 
-<p><%= @organization.description %> </p>
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <div class="org-info">
+        <h1><%= @organization.name %></h1>
+        <h2><%= @organization.cause.cause %></h2>
+        <p><%= @organization.description %></p>
+        <p><%= @organization.street %>, <%= @organization.city %>, <%= @organization.state %></p>
+      </div>
+    </div>
+  </div>
 
-<ul>
-  <li><%= @organization.street %></li>
-  <li><%= @organization.city %></li>
-  <li><%= @organization.state %></li>
-</ul>
-
-<h2>Organization opportunities</h2>
-<ul>
-  <% @opportunities.each do |opportunity| %>
-    <li><%= link_to opportunity.description, opportunity_path(opportunity) %></li>
-    <% if user_signed_in? %>
-      <% if Organization.org_admins(current_user, @organization) %>
-        <li><%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity) %></li>
-        <li><%= link_to "Remove Opportunity",
-          organization_opportunity_path(@organization, opportunity),
-          method: :delete %></li>
-      <% end %>
+  <% if Organization.org_admins(current_user, @organization) %>
+    <div class="row">
+      <div class="small-6 small-centered columns button-row">
+        <%= link_to "Edit Organization Info", edit_organization_path(@organization), class: "button round small org-button" %>
+        <%= link_to "Add Opportunity", new_organization_opportunity_path(@organization), class: "button round small org-button" %>
+      </div>
+    </div>
     <% end %>
-</ul>
-<% end %>
 
-<%= link_to "Home", root_path, class: "button round" %>
-<%= link_to "See All", organizations_path, class: "button round" %>
+  <div class="row">
+    <div class="small-5 columns opp-info">
+      <h2>Upcoming Volunteer Opportunities</h2>
+      <% if @opportunities.empty? %>
+        <p>None</p>
+      <% else %>
+        <ul>
+          <% @opportunities.each do |opportunity| %>
+            <li><%= link_to opportunity.description, opportunity_path(opportunity) %></li>
+            <% if user_signed_in? %>
+              <% if Organization.org_admins(current_user, @organization) %>
+                <li><%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity), class: "button round small org-button" %></li>
+                <li><%= link_to "Remove Opportunity",
+                  organization_opportunity_path(@organization, opportunity),
+                  method: :delete, class: "button round small org-button" %></li>
+              <% end %>
+            <% end %>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
 
-<% if Organization.org_admins(current_user, @organization) %>
-  <%= link_to "Edit Info", edit_organization_path(@organization), class: "button round" %>
-  <%= link_to "Add Opportunity", new_organization_opportunity_path(@organization), class: "button round" %>
-<% end %>
+  </div>

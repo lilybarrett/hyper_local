@@ -1,0 +1,38 @@
+h3 {
+  color: white;
+  text-align: center;
+  margin-top: 15%;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #FF851B;
+}
+
+.joined-opp {
+  border: 1px solid #FF851B;
+  padding: 5px;
+}
+
+.user-info {
+  text-align: center;
+}
+
+.joined-opp, .user-info, .orgs-list {
+  margin-top: 10%;
+  padding: 1%;
+  border: 1px solid #FF851B;
+}
+
+.edit-info {
+  margin-top: 5%;
+  background-color: #FF851B;
+  color: white;
+}
+
+.my-opportunities {
+  text-align: center;
+}
