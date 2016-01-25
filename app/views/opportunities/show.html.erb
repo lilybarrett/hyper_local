@@ -18,6 +18,17 @@
     </div>
 
     <div class="row">
+      <div class="small-4 small-centered columns">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_MAPS_API_SERVER"]%>&q=<%= @opportunity.street%>,<%=@opportunity.city%>+<%=@opportunity.state%>" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="small-5 columns vol-panel">
           <p><strong>Volunteers</strong></p>
             <% @volunteers.each do |volunteer| %>

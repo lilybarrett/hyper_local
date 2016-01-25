@@ -5,8 +5,12 @@ $white: #ffffff;
 .homepage {
   background-image: image-url("light-person-woman-fire.jpeg");
   background-repeat: no-repeat;
-  background-position: center center fixed;
   background-size: cover;
+  background-position: center center fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .footer {

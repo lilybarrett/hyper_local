@@ -5,8 +5,11 @@ $background: #496d7b;
 
 .page-background {
   background-color: $background;
-  margin-top: 1.5rem;
-  height: 100%;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center center fixed;
 }
 
 .form {
