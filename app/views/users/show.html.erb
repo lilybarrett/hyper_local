@@ -2,27 +2,31 @@
 
   <div class="row">
     <div class="small-5 columns personal-panel">
-        <p><strong>Personal Information</strong></p>
-          <ul>
-            <li><%= @user.first_name %></li>
-            <li><%= @user.email %></li>
-          </ul>
-          <%= link_to "Edit My Information", edit_user_registration_path %>
+        <h3><strong>Personal Information</strong></h3>
+        <div class="user-info">
+          <p>Full name: <%= @user.first_name %> <%= @user.last_name %></p>
+          <p>Email: <%= @user.email %></p>
+          <p><%= link_to "Edit My Information", edit_user_registration_path, class: "button round small edit-info" %></p>
+        </div>
     </div>
     <div class="small-5 columns my-opportunities">
       <% if !current_user.volunteer? %>
         <h3>My Organizations</h3>
-        <ul>
           <% @organizations.each do |organization| %>
-            <li><%= link_to organization.name, organization_path(organization) %></li>
+          <div class="orgs-list">
+            <p><%= link_to organization.name, organization_path(organization) %></p>
+          </div>
           <% end %>
-        </ul>
       <% else %>
-        <h3>My Upcoming Opportunities</h3>
+        <h3>Reminder: Upcoming Activities</h3>
         <ul>
           <% @opportunities.each do |opportunity| %>
-          <li><%= link_to opportunity.description, opportunity_path(opportunity) %></li>
-          <% end %>
+          <div class="joined-opp">
+            <p><%= link_to opportunity.description, opportunity_path(opportunity) %></p>
+            <p><%= opportunity.date.strftime("%m/%d/%Y") %></p>
+            <p><%= opportunity.start_time.strftime("%I:%M%p") %>-<%= opportunity.end_time.strftime("%I:%M%p") %></p>
+          </div>
+            <% end %>
         </ul>
       <% end %>
     </div>

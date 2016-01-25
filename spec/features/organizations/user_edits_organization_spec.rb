@@ -13,7 +13,7 @@ feature "org_admin updates organization" do
   scenario "org_admin visits update page for organization" do
     sign_in(user)
     visit organization_path(organization)
-    click_link "Edit Info"
+    click_link "Edit Organization Info"
     expect(page).to have_content("Edit Organization Info")
   end
 
@@ -21,7 +21,7 @@ feature "org_admin updates organization" do
     sign_in(user)
 
     visit organization_path(organization)
-    click_on "Edit Info"
+    click_on "Edit Organization Info"
 
     fill_in "Street Address", with: "Another Street"
     click_on "Update"
@@ -34,7 +34,7 @@ feature "org_admin updates organization" do
      sign_in(user)
 
      visit organization_path(organization)
-     click_on "Edit Info"
+     click_on "Edit Organization Info"
 
      fill_in "Street Address", with: " "
      click_on "Update"
@@ -45,7 +45,7 @@ feature "org_admin updates organization" do
    scenario "unauthenticated org_admin cannot edit entry" do
      visit organization_path(organization)
 
-     expect(page).not_to have_content("Edit Info")
+     expect(page).not_to have_content("Edit Organization Info")
    end
 
    scenario "authenticated org_admin cannot edit entry created by
@@ -54,7 +54,7 @@ feature "org_admin updates organization" do
      sign_in(user_2)
 
      visit organization_path(organization)
-     expect(page).not_to have_content("Edit Info")
+     expect(page).not_to have_content("Edit Organization Info")
    end
 
    scenario "authenticated volunteer cannot edit entry created by
@@ -63,6 +63,6 @@ feature "org_admin updates organization" do
      sign_in(user_3)
 
      visit organization_path(organization)
-     expect(page).not_to have_content("Edit Info")
+     expect(page).not_to have_content("Edit Organization Info")
    end
 end
