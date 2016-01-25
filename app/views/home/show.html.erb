@@ -5,6 +5,15 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="small-4 small-centered columns search-bar">
+    <%= form_tag("/search", method: 'get') do %>
+      <%= text_field_tag :query, params[:query] %>
+      <%= submit_tag "Search", :city => nil, class: "search-button" %>
+    <% end %>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="row">
     <div class="small-12 columns">

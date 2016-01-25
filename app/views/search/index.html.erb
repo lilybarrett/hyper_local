@@ -1,0 +1,9 @@
+<h1>Results</h1>
+
+<ol>
+  <% @opportunities.each do |opportunity| %>
+    <li>
+      <%= link_to opportunity.description, opportunity_path(opportunity) %>
+    </li>
+  <% end %>
+</ol>

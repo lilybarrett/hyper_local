@@ -1,4 +1,11 @@
 class Opportunity < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_by_city, :against => :city, using: {
+    tsearch: {
+      prefix: true 
+    }
+  }
+
   belongs_to :organization
   has_many :volunteer_lists
   has_many :users, through: :volunteer_lists
