@@ -6,10 +6,13 @@
 </div>
 
 <div class="row">
-  <div class="small-4 small-centered columns search-bar">
+  <div class="small-4 small-centered columns">
     <%= form_tag("/search", method: 'get') do %>
-      <%= text_field_tag :query, params[:query] %>
-      <%= submit_tag "Search", :city => nil, class: "search-button" %>
+      <%= label_tag "Type in your city." %>
+      <%= text_field_tag :city_query, params[:city_query] %>
+      <%= label_tag "What are you passionate about?" %>
+      <%= select_tag :cause_query, options_from_collection_for_select(Cause.all, "cause", "cause") %>
+      <%= submit_tag "Search", :city => nil, class: "button large expand search" %>
     <% end %>
   </div>
 </div>
