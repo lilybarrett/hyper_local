@@ -1,9 +1,29 @@
-<h1>All Opportunities</h1>
+<div class="page-background">
 
-<ul>
-  <% @opportunities.each do |opportunity| %>
-    <li><%= opportunity.description %></li>
-    <li><%= opportunity.date %></li>
-    <p><%= link_to "Learn More!", opportunity_path(opportunity)%></p>
-  <% end %>
-</ul>
+    <div class="row">
+      <div class="small-6 medium-12 columns">
+        <header>
+          <h1>Upcoming Opportunities</h1>
+        </header>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="small-12 centered columns">
+      <ul class="accordion" data-accordion>
+        <% @opportunities.each do |opportunity| %>
+          <li class="accordion-navigation">
+            <a href="#panel1a"><%= opportunity.description %></a>
+            <div id="panel1a" class="content active">
+              <p class="index-info"><strong>Coming up on:</strong> <%= opportunity.date %></p>
+              <p class="index-info"><strong>With:</strong> <%= opportunity.organization.name %></p>
+              <p class="index-info"><strong>Cause:</strong> <%= opportunity.organization.cause.cause%></p>
+              <p class="index-info"><%= link_to "Learn More!", opportunity_path(opportunity)%></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>

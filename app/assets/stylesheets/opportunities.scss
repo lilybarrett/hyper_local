@@ -1,0 +1,45 @@
+@import "foundation_and_overrides";
+
+.vol-panel, .opportunity-info {
+  border: 5px solid #FF851B;
+  color: white;
+  background-color: #496d7b;
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+}
+
+header {
+  margin: 5%;
+}
+
+h1, h2 {
+  color: white;
+  text-align: center;
+}
+
+.join-button {
+  background-color: #FF851B;
+  color: white;
+}
+
+#org-name {
+  a {
+    color: white;
+  }
+  a:hover {
+    color: #FF851B;
+  }
+}
+
+.index-info {
+  color: white;
+  a {
+    color: #FF851B;
+    border: 1px solid #FF851B;
+    padding: 2px;
+  }
+  a:hover {
+    color: white;
+  }
+}

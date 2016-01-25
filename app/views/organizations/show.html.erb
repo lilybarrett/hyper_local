@@ -12,12 +12,14 @@
 <h2>Organization opportunities</h2>
 <ul>
   <% @opportunities.each do |opportunity| %>
-    <li><%= opportunity.description %></li>
-    <% if Organization.org_admins(current_user, @organization) %>
-      <li><%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity) %></li>
-      <li><%= link_to "Remove Opportunity",
-        organization_opportunity_path(@organization, opportunity),
-        method: :delete %></li>
+    <li><%= link_to opportunity.description, opportunity_path(opportunity) %></li>
+    <% if user_signed_in? %>
+      <% if Organization.org_admins(current_user, @organization) %>
+        <li><%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity) %></li>
+        <li><%= link_to "Remove Opportunity",
+          organization_opportunity_path(@organization, opportunity),
+          method: :delete %></li>
+      <% end %>
     <% end %>
 </ul>
 <% end %>
