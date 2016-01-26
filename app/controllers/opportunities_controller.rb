@@ -23,6 +23,7 @@ class OpportunitiesController < ApplicationController
     @opportunity = Opportunity.find(params[:id])
     @organization = @opportunity.organization
     @volunteers = @opportunity.users
+    @volunteer_list = VolunteerList.find_by(user: current_user, opportunity: @opportunity)
   end
 
   def edit

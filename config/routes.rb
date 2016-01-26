@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     resources :volunteer_lists, only: [:create]
   end
 
+  resources :volunteer_lists, only: [:destroy]
+
   get '/search' => 'search#index'
 end

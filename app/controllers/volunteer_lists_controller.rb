@@ -13,4 +13,11 @@ class VolunteerListsController < ApplicationController
         redirect_to opportunity_path(@opportunity)
       end
   end
+
+  def destroy
+    @volunteer_list = VolunteerList.find(params[:id])
+    @volunteer_list.destroy
+    flash[:notice] = "You have been removed from this activity"
+    redirect_to opportunity_path(@volunteer_list.opportunity)
+  end
 end
