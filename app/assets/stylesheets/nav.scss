@@ -1,0 +1,24 @@
+@import "foundation_and_overrides";
+
+.top-bar ul li {
+  font-weight: bold;
+}
+
+.top-bar-section ul li {
+  background: transparent;
+  border: 2px solid #FF851B;
+  font-weight: bold;
+  margin: 0.5rem 2rem;
+}
+
+.nav-img {
+  height: $topbar-height;
+}
+
+.droplink li {
+  background: transparent;
+  font-weight: bold;
+  &:hover {
+    background-color: #FF851B;
+  }
+}

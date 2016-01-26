@@ -3,8 +3,7 @@ require 'rails_helper'
 feature 'user creates an account' do
 
   before :each do
-    visit root_path
-    click_link "Sign Up"
+    visit new_user_registration_path
   end
 
   scenario "user specifies valid and required info as a volunteer" do
@@ -15,10 +14,13 @@ feature 'user creates an account' do
     fill_in "Password", with: user.password
     fill_in "Password Confirmation", with: user.password
     select 'Volunteer', from: "Are you a volunteer or an organization?"
+    attach_file "Profile Photo",
+     "#{Rails.root}/spec/support/images/Launcher.jpg"
 
     click_button "Sign Up"
 
     expect(page).to have_content("Sign Out")
+    expect(page).to have_css("img[src*='Launcher.jpg']")
   end
 
   scenario "user does not provide required information" do

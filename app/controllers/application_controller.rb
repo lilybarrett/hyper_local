@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) <<
-      [:first_name, :last_name, :volunteer]
+      [:first_name, :last_name, :volunteer, :profile_photo]
     devise_parameter_sanitizer.for(:account_update) <<
-      [:volunteer]
+      [:volunteer, :profile_photo]
   end
 end

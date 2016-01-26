@@ -4,6 +4,7 @@
     <div class="small-5 columns personal-panel">
         <h3><strong>Personal Information</strong></h3>
         <div class="user-info">
+          <%= image_tag current_user.profile_photo_url, class: 'profile-page-img' %>
           <p>Full name: <%= @user.first_name %> <%= @user.last_name %></p>
           <p>Email: <%= @user.email %></p>
           <p><%= link_to "Edit My Information", edit_user_registration_path, class: "button round small edit-info" %></p>

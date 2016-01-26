@@ -1,3 +1,4 @@
+
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
@@ -14,8 +15,18 @@
           <li><%= link_to "View All Opportunities", opportunities_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-          <li><%= link_to "My Profile", current_user %></li>
-          <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+          <li class="has-dropdown">
+            <a href="#">
+              <% if current_user.profile_photo? %>
+                <%= image_tag current_user.profile_photo_url, class: 'nav-img' %>
+              <% end %>
+              <%= current_user.first_name %>
+            </a>
+            <ul class="dropdown drop-link">
+              <li><%= link_to "My Profile", current_user %></li>
+              <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+            </ul>
+          </li>
         <% else %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li><%= link_to "Sign In", new_user_session_path %></li>

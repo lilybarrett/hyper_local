@@ -22,14 +22,19 @@
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
+      <div class="field">
+        <%= f.label :password_confirmation, "Password Confirmation" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
       <div class="volunteer field">
         <%= f.label :volunteer, "Are you a volunteer or an organization?" %>
         <%= f.select :volunteer, [ ["Volunteer", true], ["Organization", false] ] %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation, "Password Confirmation" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.label :profile_photo, "Profile Photo" %>
+        <%= f.file_field :profile_photo %>
       </div>
 
       <div class="field">

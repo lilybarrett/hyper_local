@@ -4,8 +4,7 @@ feature "user signs out" do
   scenario "an existing user specifies valid email and password" do
     user = FactoryGirl.create(:user)
 
-    visit root_path
-    click_link "Sign In"
+    visit new_user_session_path
 
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
