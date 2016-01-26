@@ -17,7 +17,9 @@
           <% else %>
             <div class="at-capacity"><i>Event Is At Capacity</i></div>
           <% end %>
-          <%= button_to "Can't Make it?", volunteer_list_path, method: :delete, class: "button large expand join-button" %>
+          <% unless @volunteer_list.nil? %>
+            <%= button_to "Can't Make it?", volunteer_list_path(@volunteer_list), method: :delete, class: "button large expand join-button" %>
+          <% end %>
         <% end %>
       </div>
     </div>
