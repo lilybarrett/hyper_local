@@ -19,8 +19,6 @@ feature "user edits account" do
     click_link "Edit Account"
     visit edit_user_registration_path
 
-  # attach_file 'Profile Photo',
-  #   "#{Rails.root}/spec/support/images/soldier.jpg"
     fill_in "Email", with: "new_email@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password Confirmation", with: "newpassword"
@@ -29,7 +27,6 @@ feature "user edits account" do
 
     expect(page).to have_content("Your account has been updated successfully.")
     expect(page).to have_content("Sign Out")
-    # expect(page).to have_css("img[src*='soldier.jpg']")
   end
 
   scenario "an existing volunteer changes designation to organization" do

@@ -10,7 +10,7 @@
     </div>
 
     <div class="row">
-      <div class="small-4 small-centered columns">
+      <div class="small-5 small-centered columns">
         <% if user_signed_in? %>
           <% unless @opportunity.users.count >= @opportunity.capacity %>
             <%= button_to "Join Us!", opportunity_volunteer_lists_path(@opportunity), class: "button large expand join-button" %>
@@ -25,24 +25,15 @@
     </div>
 
     <div class="row">
-      <div class="small-4 small-centered columns">
+      <div class="small-5 columns map-frame">
         <iframe
-          width="600"
-          height="450"
+          width="500"
+          height="400"
           frameborder="0" style="border:0"
           src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_MAPS_API_SERVER"]%>&q=<%= @opportunity.street%>,<%=@opportunity.city%>+<%=@opportunity.state%>" allowfullscreen>
         </iframe>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="small-5 columns vol-panel">
-          <p><strong>Volunteers</strong></p>
-            <% @volunteers.each do |volunteer| %>
-              <p><%= volunteer.first_name %><%= volunteer.last_name.first %></p>
-            <% end %>
-      </div>
-      <div class="small-5 columns opportunity-info">
+      <div class="small-4 columns opportunity-info">
         <p>
           <strong>What It's All About:</strong>
         </p>
@@ -66,6 +57,20 @@
         <p>
           <%= @opportunity.street %>, <%= @opportunity.city %>, <%= @opportunity.state %>
         </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns vol-panel">
+        <ul class="small-block-grid-5">
+          <p><strong>Volunteers</strong></p>
+            <% @volunteers.each do |volunteer| %>
+              <li>
+                <%= image_tag current_user.profile_photo_url, class: 'vol-img' %>
+              <span class="label"><%= volunteer.first_name %> <%= volunteer.last_name.first %>.</span>
+              </li>
+            <% end %>
+          </ul>
       </div>
     </div>
 

@@ -29,6 +29,8 @@ gem 'dotenv-rails'
 
 gem 'pg_search'
 
+gem 'carrierwave'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -389,18 +389,18 @@ $accordion-content-active-bg-color: #496d7b;
 // 03. Block Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-block-grid-classes: $include-html-classes;
+$include-html-block-grid-classes: $include-html-classes;
 // $include-xl-html-block-grid-classes: false;
 
 // We use this to control the maximum number of block grid elements per row
-// $block-grid-elements: 12;
-// $block-grid-default-spacing: rem-calc(20);
+$block-grid-elements: 12;
+$block-grid-default-spacing: rem-calc(20);
 
 // $align-block-grid-to-grid: false;
 // @if $align-block-grid-to-grid {$block-grid-default-spacing: $column-gutter;}
 
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
-// $block-grid-media-queries: true;
+$block-grid-media-queries: true;
 
 // 04. Breadcrumbs
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1407,7 +1407,7 @@ $topbar-bg-color: transparent;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: rem-calc(45);
+$topbar-height: rem-calc(45);
 $topbar-margin-bottom: 1rem;
 
 // Controlling the styles for the title in the top bar
