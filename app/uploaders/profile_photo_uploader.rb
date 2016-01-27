@@ -1,8 +1,8 @@
 class ProfilePhotoUploader < CarrierWave::Uploader::Base
   if Rails.env.test?
     storage :file
-  # else
-  #   storage :fog
+  else
+    storage :fog
   end
 
   def store_dir
