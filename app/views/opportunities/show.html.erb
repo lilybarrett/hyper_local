@@ -18,7 +18,7 @@
             <div class="at-capacity"><i>Event Is At Capacity</i></div>
           <% end %>
           <% unless @volunteer_list.nil? %>
-            <%= button_to "Can't Make it?", volunteer_list_path(@volunteer_list), method: :delete, class: "button large expand join-button" %>
+            <%= button_to "Can't Make It?", volunteer_list_path(@volunteer_list), method: :delete, class: "button large expand join-button" %>
           <% end %>
         <% end %>
       </div>
@@ -66,7 +66,7 @@
           <p><strong>Volunteers</strong></p>
             <% @volunteers.each do |volunteer| %>
               <li>
-                <%= image_tag current_user.profile_photo_url, class: 'vol-img' %>
+                <%= image_tag volunteer.profile_photo_url, class: 'vol-img' %>
               <span class="label"><%= volunteer.first_name %> <%= volunteer.last_name.first %>.</span>
               </li>
             <% end %>
