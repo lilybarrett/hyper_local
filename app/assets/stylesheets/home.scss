@@ -21,6 +21,10 @@ $white: #ffffff;
 .search {
   background-color: #FF851B;
   color: white;
+  &:hover {
+    background-color: #FF851B;
+    color: white;
+  }
 }
 
 .footer {

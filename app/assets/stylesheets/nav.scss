@@ -15,10 +15,10 @@
   height: $topbar-height;
 }
 
-.droplink li {
-  background: transparent;
+.top-bar-section ul li a {
+  background: #FF851B !important;
   font-weight: bold;
   &:hover {
-    background-color: #FF851B;
+    background-color: #FF851B !important;
   }
 }
