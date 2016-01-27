@@ -22,9 +22,9 @@
               <% end %>
               <%= current_user.first_name %>
             </a>
-            <ul class="dropdown drop-link">
-              <li><%= link_to "My Profile", current_user %></li>
-              <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+            <ul class="dropdown">
+              <li class="drop-link"><%= link_to "My Profile", current_user %></li>
+              <li class="drop-link"><%= link_to "Edit Account", edit_user_registration_path %></li>
             </ul>
           </li>
         <% else %>

@@ -1,6 +1,6 @@
 .org-info {
   text-align: center;
-  border: 1px solid #FF851B;
+  border: 2px solid #FF851B;
   margin-top: 5%;
 }
 
@@ -9,11 +9,23 @@
 }
 
 .opp-info {
+  margin-top: 5%;
   text-align: center;
-  border: 1px solid #FF851B;
+  border: 2px solid #FF851B;
 }
 
 .org-button {
   background-color: #FF851B;
   color: white;
+}
+
+.opp-button {
+  background-color: #FF851B;
+  color: white;
+}
+
+.opp-link {
+   list-style: none;
+   margin: 0;
+   padding: 0;
 }

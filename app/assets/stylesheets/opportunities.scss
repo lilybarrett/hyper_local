@@ -51,6 +51,12 @@ h1, h2 {
   }
 }
 
+.accordion-navigation a {
+  &:hover {
+    background-color: darken(#FF851B, 40%);
+  }
+}
+
 .map-frame {
   margin: 2%;
 }

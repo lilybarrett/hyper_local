@@ -14,11 +14,17 @@
   </head>
 
   <body class="homepage">
+
     <%= render "layouts/nav" %>
 
-    <% flash.each do |key, value| %>
-      <%= value %>
-    <% end %>
+        <div class="flash">
+          <% flash.each do |key, value| %>
+            <div data-alert class="alert-box <%= key.to_s == 'notice' ? 'success' : 'alert' %>">
+            <%= content_tag :div, value %>
+            <a href="#" class="close">&times;</a>
+          </div>
+          <% end %>
+        </div>
 
     <%= yield %>
 

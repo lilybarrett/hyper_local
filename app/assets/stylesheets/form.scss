@@ -13,13 +13,13 @@ $background: #496d7b;
 }
 
 .form {
-  border: 2px solid $white;
+  border: 2px solid #FF851B;
   color: $white;
   text-align: center;
   margin: auto;
-  margin-top: 7px;
+  margin-top: 10%;
+  margin-bottom: 10%;
   padding: 15px 30px 0;
-
   h2 {
     color: $white;
   }
@@ -35,6 +35,22 @@ $background: #496d7b;
   text-align: center;
 }
 
-.back-links a {
+.submit {
+  background-color: #FF851B;
+  color: white;
+  &:hover {
+    background-color: #FF851B;
+    color: white;
+  }
+}
+
+.delete {
+  background-color: #FF851B;
+  color: white;
+}
+
+.back-links {
   color: $white;
+  text-align: center;
+  margin-bottom: 10%;
 }
