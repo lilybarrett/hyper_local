@@ -31,6 +31,10 @@ a:hover {
   margin-top: 5%;
   background-color: #FF851B;
   color: white;
+  &:hover {
+    background-color: #FF851B;
+    color: white;
+  }
 }
 
 .my-opportunities {

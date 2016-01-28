@@ -21,6 +21,10 @@ h1, h2 {
 .join-button {
   background-color: #FF851B;
   color: white;
+  &:hover {
+    background-color: #FF851B;
+    color: white;
+  }
 }
 
 .at-capacity {
@@ -28,6 +32,10 @@ h1, h2 {
   color: white;
   text-align: center;
   margin-bottom: 5%;
+  &:hover {
+    background-color: #FF851B;
+    color: white;
+  }
 }
 
 #org-name {
@@ -48,12 +56,6 @@ h1, h2 {
   }
   a:hover {
     color: white;
-  }
-}
-
-.accordion-navigation a {
-  &:hover {
-    background-color: darken(#FF851B, 40%);
   }
 }
 
