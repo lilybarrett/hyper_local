@@ -17,5 +17,11 @@ Rails.application.routes.draw do
 
   resources :volunteer_lists, only: [:destroy]
 
+  namespace :api do
+    namespace :v1 do
+      resources :volunteer_lists, only: [:create]
+    end
+  end
+
   get '/search' => 'search#index'
 end
