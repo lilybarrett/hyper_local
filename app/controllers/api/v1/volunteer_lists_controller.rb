@@ -4,9 +4,15 @@ class Api::V1::VolunteerListsController < ActionController::Base
   def create
     volunteer_list = VolunteerList.new(vol_params)
     if volunteer_list.save
-      render json: :nothing, status: :created, location: api_v1_volunteer_lists_path
+      render json: {
+        user_id: current_user.id,
+        opportunity_id: volunteer_list.opportunity.id,
+        image_source: current_user.profile_photo_url,
+        user_first_name: current_user.first_name,
+        user_last_initial: current_user.last_name.first
+      }
     else
-      render json: :nothing, status: :not_found
+      render json: { errors: volunteer_list.errors.full_messages.join(', ') }, status: :unprocessable_entity
     end
   end
 
