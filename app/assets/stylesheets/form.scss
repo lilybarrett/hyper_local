@@ -23,6 +23,9 @@ $background: #496d7b;
   h2 {
     color: $white;
   }
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .field {
@@ -41,12 +44,16 @@ $background: #496d7b;
   &:hover {
     background-color: #FF851B;
     color: white;
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
 }
 
 .delete {
   background-color: #FF851B;
   color: white;
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .back-links {

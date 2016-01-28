@@ -2,6 +2,9 @@
   text-align: center;
   border: 2px solid #FF851B;
   margin-top: 5%;
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .button-row {
@@ -12,16 +15,29 @@
   margin-top: 3%;
   text-align: center;
   border: 2px solid #FF851B;
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .org-button {
   background-color: #FF851B;
   color: white;
+  &:hover {
+    background-color: #FF851B;
+    color: white;
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .opp-button {
   background-color: #FF851B;
   color: white;
+  &:hover {
+    background-color: #FF851B;
+    color: white;
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .opp-link {

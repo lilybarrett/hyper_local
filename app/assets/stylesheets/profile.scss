@@ -19,12 +19,23 @@ a:hover {
 
 .user-info {
   text-align: center;
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .joined-opp, .user-info, .orgs-list {
   margin-top: 10%;
   padding: 1%;
   border: 1px solid #FF851B;
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
+}
+
+.orgs-list p {
+  text-align: center;
+  margin: 2%;
 }
 
 .edit-info {
@@ -34,6 +45,7 @@ a:hover {
   &:hover {
     background-color: #FF851B;
     color: white;
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
 }
 

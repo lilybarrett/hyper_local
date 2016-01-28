@@ -7,11 +7,17 @@
   margin: 2%;
   padding: 2%;
   text-align: center;
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 .opp-div {
   border: 1px solid #FF851B;
   margin: 2%;
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
 
 header {
@@ -29,6 +35,7 @@ h1, h2 {
   &:hover {
     background-color: #FF851B;
     color: white;
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
 }
 
@@ -81,4 +88,10 @@ h1, h2 {
 
 .opp-desc {
   margin: 3%;
+}
+
+.accordion {
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
 }
