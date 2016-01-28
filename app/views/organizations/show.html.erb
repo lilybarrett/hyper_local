@@ -25,42 +25,35 @@
       <h2><%= @organization.name %>'s Upcoming Volunteer Opportunities</h2>
       <% if @opportunities.empty? %>
         <p>None</p>
-
       <% else %>
-
-            <ul class="accordion" data-accordion>
-              <% @opportunities.each do |opportunity| %>
-                <li class="accordion-navigation">
-                  <a href="#panel<%= opportunity.id %>">
-                    <%= opportunity.date %>: <%= opportunity.description %>
-                  </a>
-                  <div id="panel<%= opportunity.id %>" class="content">
-                    <ul>
+      <div class="row">
+        <!-- <div class="small-12 small-centered columns"> -->
+          <ul class="small-block-grid-4">
+            <% @opportunities.each do |opportunity| %>
+              <li>
+                <%= opportunity.date %>: <%= opportunity.description %>
+                    <li class="opp-link">
+                      <%= link_to "Learn More", opportunity_path(opportunity), class: "button round tiny opp-button" %>
+                    </li>
+                  <% if user_signed_in? %>
+                    <% if Organization.org_admins(current_user, @organization) %>
                       <li class="opp-link">
-                        <%= link_to "Learn More", opportunity_path(opportunity), class: "button round tiny opp-button" %>
+                        <%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity), class: "button round tiny opp-button" %>
                       </li>
-                      <% if user_signed_in? %>
-                        <% if Organization.org_admins(current_user, @organization) %>
-                          <li class="opp-link">
-                            <%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity), class: "button round tiny opp-button" %>
-                          </li>
-                          <li class="opp-link">
-                            <%= link_to "Remove Opportunity",
-                            organization_opportunity_path(@organization, opportunity),
-                            method: :delete, class: "button round tiny opp-button" %>
-                          </li>
-                        </ul>
-                      <% end %>
+                      <li class="opp-link">
+                        <%= link_to "Remove Opportunity",
+                        organization_opportunity_path(@organization, opportunity),
+                        method: :delete, class: "button round tiny opp-button" %>
+                      </li>
                     <% end %>
-                  </div>
+                  <% end %>
                 </li>
-              </ul>
-
-            </div>
-          </div>
-        <% end %>
-      </div>
+              <% end %>
+            </ul>
+          <!-- </div> -->
+        </div>
+      <% end %>
     </div>
-
   </div>
-<% end %>
+
+</div>

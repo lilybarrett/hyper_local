@@ -25,7 +25,7 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-    @opportunities = @organization.opportunities
+    @opportunities = @organization.opportunities.upcoming
   end
 
   def edit
