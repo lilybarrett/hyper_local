@@ -5,10 +5,25 @@
         <h1 class="results">Sorry! No matches yet.</h1>
       <% else %>
         <h1 class="results">All Results</h1>
-        <ul>
+        <ul class="accordion" data-accordion>
           <% @opportunities.each do |opportunity| %>
-            <li>
-              <%= link_to opportunity.description, opportunity_path(opportunity) %>
+            <li class="accordion-navigation">
+              <a href="#panel<%= opportunity.id %>"><%= opportunity.date %>: <%= opportunity.description %> with <%= opportunity.organization.name %></a>
+              <div id="panel<%= opportunity.id %>" class="content">
+                <div class="row">
+                  <div class="small-4 columns">
+                    <iframe
+                      height="150"
+                      frameborder="0" style="border:0"
+                      src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_MAPS_API_SERVER"]%>&q=<%= opportunity.street%>,<%=opportunity.city%>+<%=opportunity.state%>" allowfullscreen>
+                    </iframe>
+                  </div>
+                  <div class="small-8 columns">
+                    <p class="index-info"><strong>Cause:</strong> <%= opportunity.organization.cause.cause%></p>
+                    <p class="index-info">Location: <%= opportunity.street %>, <%= opportunity.city %>, <%= opportunity.state %></p>
+                    <p class="index-info"><%= link_to "Learn More!", opportunity_path(opportunity)%></p>
+                  </div>
+              </div>
             </li>
           <% end %>
         </ul>
