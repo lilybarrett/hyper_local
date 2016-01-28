@@ -31,22 +31,24 @@
           <ul class="small-block-grid-4">
             <% @opportunities.each do |opportunity| %>
               <li>
-                <%= opportunity.date %>: <%= opportunity.description %>
-                    <li class="opp-link">
+                <div class="opp-div">
+                <p class="opp-desc"><%= opportunity.date %>: <%= opportunity.description %></p>
+                    <p class="opp-link">
                       <%= link_to "Learn More", opportunity_path(opportunity), class: "button round tiny opp-button" %>
-                    </li>
+                    </p>
                   <% if user_signed_in? %>
                     <% if Organization.org_admins(current_user, @organization) %>
-                      <li class="opp-link">
+                      <p class="opp-link">
                         <%= link_to "Change Opportunity Info", edit_opportunity_path(opportunity), class: "button round tiny opp-button" %>
-                      </li>
-                      <li class="opp-link">
+                      </p>
+                      <p class="opp-link">
                         <%= link_to "Remove Opportunity",
                         organization_opportunity_path(@organization, opportunity),
                         method: :delete, class: "button round tiny opp-button" %>
-                      </li>
+                      </p>
                     <% end %>
                   <% end %>
+                  </div>
                 </li>
               <% end %>
             </ul>
