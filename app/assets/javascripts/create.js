@@ -15,11 +15,10 @@ $(document).ready(function() {
     });
     request.done(function(data) {
       debugger;
-      $('.vol-grid').append("<li>" + "<img src=" + response.image_source + "class = 'vol-img'" + "span class='label'>" + "user_first_name" + " " + "user_last_initial" + "</span" + "</li>")
+      $('.vol-grid').append("<li>" + "<img src=" + data.image_source + "> " + "<span class='label'>" + data.user_first_name + " " + data.user_last_initial + "</span>" + "</li>")
     });
     request.error(function(jqXHR, textStatus, errorThrown) {
       alert("Not working!");
-      debugger;
     });
   });
 });
