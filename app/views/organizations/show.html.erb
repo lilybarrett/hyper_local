@@ -32,7 +32,7 @@
             <% @opportunities.each do |opportunity| %>
               <li>
                 <div class="opp-div">
-                <p class="opp-desc"><%= opportunity.date %>: <%= opportunity.description %></p>
+                <p class="opp-desc"><%= opportunity.date.strftime("%m/%d/%Y") %>: <%= opportunity.description %></p>
                     <p class="opp-link">
                       <%= link_to "Learn More", opportunity_path(opportunity), class: "button round tiny opp-button" %>
                     </p>
