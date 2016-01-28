@@ -15,16 +15,16 @@ feature "user views upcoming opportunities on site" do
     opportunity_2 = FactoryGirl.create(:opportunity, date: Date.today.prev_day)
     visit opportunities_path
 
-    expect(page).to_not have_content(opportunity_2.date)
-    expect(page).to have_content(opportunity.date)
+    expect(page).to_not have_content(opportunity_2.date.strftime("%m/%d/%Y"))
+    expect(page).to have_content(opportunity.date.strftime("%m/%d/%Y"))
   end
 
   scenario "a user can view details on opportunity show page" do
     opportunity_2 = FactoryGirl.create(:opportunity, date: Date.today.prev_day)
     visit opportunities_path
 
-    expect(page).to_not have_content(opportunity_2.date)
-    expect(page).to have_content(opportunity.date)
+    expect(page).to_not have_content(opportunity_2.date.strftime("%m/%d/%Y"))
+    expect(page).to have_content(opportunity.date.strftime("%m/%d/%Y"))
   end
 
   scenario "a user can view more details on opportunity show page" do
