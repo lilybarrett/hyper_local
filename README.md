@@ -2,7 +2,7 @@
 ![Code Climate](https://codeclimate.com/github/lilybarrett/hyper_local.png)
 [![Coverage Status](https://coveralls.io/repos/lilybarrett/hyper_local/badge.svg?branch=master&service=github)](https://coveralls.io/github/lilybarrett/hyper_local?branch=master)
 
-HyperLocal is a Rails app connecting people with local volunteer opportunities.
+[HyperLocal](https://hyper-local.herokuapp.com/) is a Rails app connecting people with local volunteer opportunities.
 
 For HyperLocal, I've done the following:
 
