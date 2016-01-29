@@ -13,7 +13,7 @@
       <ul class="accordion" data-accordion>
         <% @opportunities.each do |opportunity| %>
           <li class="accordion-navigation">
-            <a href="#panel<%= opportunity.id %>"><%= opportunity.date.strftime("%m/%d/%Y") %>: <%= opportunity.description %> with <%= opportunity.organization.name %></a>
+            <a href="#panel<%= opportunity.id %>"><span class="blue"><%= opportunity.date.strftime("%m/%d/%Y") %></span>: <%= opportunity.description %> with <span class="blue"><%= opportunity.organization.name %></span></a>
             <div id="panel<%= opportunity.id %>" class="content">
               <div class="row">
                 <div class="small-4 columns">
