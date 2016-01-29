@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @opportunities = Opportunity.upcoming 
+    @opportunities = Opportunity.upcoming.order(date: :asc) 
     if params[:city_query].present?
       @opportunities = @opportunities.search_by_city(params[:city_query])
     end

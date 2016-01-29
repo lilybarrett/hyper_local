@@ -1,6 +1,6 @@
 class OpportunitiesController < ApplicationController
   def index
-    @opportunities = Opportunity.upcoming
+    @opportunities = Opportunity.upcoming.order(date: :asc) 
   end
 
   def new
