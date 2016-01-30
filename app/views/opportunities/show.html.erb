@@ -13,7 +13,7 @@
       <div class="small-5 small-centered columns opp-button-row">
         <% if user_signed_in? %>
           <% unless @opportunity.users.count >= @opportunity.capacity %>
-            <%= button_to "Join Us!", opportunity_volunteer_lists_path(@opportunity), class: "button large expand join-button join", data: { user_id: current_user.id, opportunity_id: @opportunity.id } %>
+            <%= button_to "Join Us!", opportunity_volunteer_lists_path(@opportunity), class: "button large expand join-button join" %>
           <% else %>
             <div class="at-capacity"><i>Event Is At Capacity</i></div>
           <% end %>
