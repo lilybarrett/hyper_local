@@ -1,12 +1,12 @@
 // @import "foundation_and_overrides";
-$accent-color: #FF851B;
+$accent-color: #ff851b;
 $background-color: #496d7b;
 $blue: #496d7b;
 
 .vol-panel, .opportunity-info {
+  background-color: $background-color;
   border: 5px solid $accent-color;
   color: white;
-  background-color: $background-color;
   margin: 2%;
   padding: 2%;
   text-align: center;
@@ -65,8 +65,8 @@ h1, h2 {
 .index-info {
   color: white;
   a {
-    color: $accent-color;
     border: 1px solid $accent-color;
+    color: $accent-color;
     padding: 2px;
   }
   a:hover {
