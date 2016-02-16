@@ -1,14 +1,5 @@
 // $(document).ready(function () {
-//     toggleFields();
-//     $(".volunteer").change(function () {
-//         toggleFields();
+//     if ($(".volunteer").val() == false ) {
+//       $("#organization-profile").show();
 //     });
 // });
-//
-// function toggleFields() {
-//     if ($(".volunteer").val() == "false") {
-//       $("#organization-profile").show();
-//     } else {
-//       $("#organization_profile").hide();
-//     }
-// }
