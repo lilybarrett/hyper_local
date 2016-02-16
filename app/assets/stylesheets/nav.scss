@@ -1,4 +1,5 @@
 @import "foundation_and_overrides";
+$accent-color: #FF851B;
 
 .top-bar ul li {
   font-weight: bold;
@@ -6,7 +7,7 @@
 
 .top-bar-section ul li {
   background: transparent;
-  border: 2px solid #FF851B;
+  border: 2px solid $accent-color;
   font-weight: bold;
   margin: 0.5rem 2rem;
 }
@@ -16,9 +17,9 @@
 }
 
 .top-bar-section ul li a {
-  background: #FF851B !important;
+  background: $accent-color !important;
   font-weight: bold;
   &:hover {
-    background-color: #FF851B !important;
+    background-color: $accent-color !important;
   }
 }
