@@ -1,6 +1,8 @@
+$accent-color: #FF851B;
+
 .org-info {
   text-align: center;
-  border: 2px solid #FF851B;
+  border: 2px solid $accent-color;
   margin-top: 5%;
   &:hover {
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
@@ -14,27 +16,27 @@
 .opp-info {
   margin-top: 3%;
   text-align: center;
-  border: 2px solid #FF851B;
+  border: 2px solid $accent-color;
   &:hover {
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
 }
 
 .org-button {
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   &:hover {
-    background-color: #FF851B;
+    background-color: $accent-color;
     color: white;
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
 }
 
 .opp-button {
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   &:hover {
-    background-color: #FF851B;
+    background-color: $accent-color;
     color: white;
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }

@@ -2,6 +2,7 @@
 $black: #000;
 $white: #ffffff;
 $background: #496d7b;
+$accent-color: #FF851B;
 
 .page-background {
   background-color: $background;
@@ -13,7 +14,7 @@ $background: #496d7b;
 }
 
 .form {
-  border: 2px solid #FF851B;
+  border: 2px solid $accent-color;
   color: $white;
   text-align: center;
   margin: auto;
@@ -39,17 +40,17 @@ $background: #496d7b;
 }
 
 .submit {
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   &:hover {
-    background-color: #FF851B;
+    background-color: $accent-color;
     color: white;
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
 }
 
 .delete {
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   &:hover {
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);

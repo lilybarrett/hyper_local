@@ -1,6 +1,7 @@
 @import "foundation_and_overrides";
 $black: #000;
 $white: #ffffff;
+$accent-color: #FF851B;
 
 .homepage {
   background-image: image-url("light-person-woman-fire.jpeg");
@@ -19,10 +20,10 @@ $white: #ffffff;
 }
 
 .search {
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   &:hover {
-    background-color: #FF851B;
+    background-color: $accent-color;
     color: white;
   }
 }
@@ -37,7 +38,7 @@ $white: #ffffff;
   width: 100%;
 
   .links a {
-    border: 2px solid #FF851B;
+    border: 2px solid $accent-color;
     color: $white;
     font-weight: bold;
     margin: 0;

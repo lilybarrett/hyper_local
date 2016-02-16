@@ -1,9 +1,12 @@
 // @import "foundation_and_overrides";
+$accent-color: #FF851B;
+$background-color: #496d7b;
+$blue: #496d7b;
 
 .vol-panel, .opportunity-info {
-  border: 5px solid #FF851B;
+  border: 5px solid $accent-color;
   color: white;
-  background-color: #496d7b;
+  background-color: $background-color;
   margin: 2%;
   padding: 2%;
   text-align: center;
@@ -13,7 +16,7 @@
 }
 
 .opp-div {
-  border: 1px solid #FF851B;
+  border: 1px solid $accent-color;
   margin: 2%;
   &:hover {
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
@@ -30,22 +33,22 @@ h1, h2 {
 }
 
 .join-button {
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   &:hover {
-    background-color: #FF851B;
+    background-color: $accent-color;
     color: white;
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
 }
 
 .at-capacity {
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   text-align: center;
   margin-bottom: 5%;
   &:hover {
-    background-color: #FF851B;
+    background-color: $accent-color;
     color: white;
   }
 }
@@ -55,15 +58,15 @@ h1, h2 {
     color: white;
   }
   a:hover {
-    color: #FF851B;
+    color: $accent-color;
   }
 }
 
 .index-info {
   color: white;
   a {
-    color: #FF851B;
-    border: 1px solid #FF851B;
+    color: $accent-color;
+    border: 1px solid $accent-color;
     padding: 2px;
   }
   a:hover {
@@ -97,5 +100,5 @@ h1, h2 {
 }
 
 .blue {
-  color: #496d7b;
+  color: $blue;
 }

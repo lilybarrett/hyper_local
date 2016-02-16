@@ -1,3 +1,5 @@
+$accent-color: #FF851B;
+
 h3 {
   color: white;
   text-align: center;
@@ -9,11 +11,11 @@ a {
 }
 
 a:hover {
-  color: #FF851B;
+  color: $accent-color;
 }
 
 .joined-opp {
-  border: 1px solid #FF851B;
+  border: 1px solid $accent-color;
   padding: 5px;
 }
 
@@ -27,7 +29,7 @@ a:hover {
 .joined-opp, .user-info, .orgs-list {
   margin-top: 10%;
   padding: 1%;
-  border: 1px solid #FF851B;
+  border: 1px solid $accent-color;
   &:hover {
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
@@ -40,10 +42,10 @@ a:hover {
 
 .edit-info {
   margin-top: 5%;
-  background-color: #FF851B;
+  background-color: $accent-color;
   color: white;
   &:hover {
-    background-color: #FF851B;
+    background-color: $accent-color;
     color: white;
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
