@@ -22,7 +22,3 @@ describe User do
     expect(user.errors[:password_confirmation]).to_not be_blank
   end
 end
-
-# RSpec.describe User, type: :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
