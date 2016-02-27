@@ -151,17 +151,17 @@ $body-font-family: 'Montserrat', sans-serif;
 // d. Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $small-breakpoint:  em-calc(640);
-// $medium-breakpoint: em-calc(1024);
-// $large-breakpoint:  em-calc(1440);
-// $xlarge-breakpoint: em-calc(1920);
+$small-breakpoint:  em-calc(640);
+$medium-breakpoint: em-calc(1024);
+$large-breakpoint:  em-calc(1440);
+$xlarge-breakpoint: em-calc(1920);
 
 // $small-range:   (0, $small-breakpoint);
 // $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
 // $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
 // $xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);
 // $xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));
-
+//
 // $screen: "only screen";
 
 // $landscape: "#{$screen} and (orientation: landscape)";
@@ -243,7 +243,7 @@ $body-font-family: 'Montserrat', sans-serif;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-// $small-font-size: 60%;
+$small-font-size: 60%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
