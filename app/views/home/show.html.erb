@@ -1,12 +1,12 @@
 <div class="row">
   <div class="small-9 small-centered columns homepagediv">
     <p>Ready to Change the World?</p>
-    <p class>Start With Your City.</p>
+    <p>Start With Your City.</p>
   </div>
 </div>
 
 <div class="row">
-  <div class="small-4 small-centered columns">
+  <div class="medium-4 medium-centered small-12 small-centered columns">
     <%= form_tag("/search", method: 'get') do %>
       <%= label_tag "Type in your city." %>
       <%= text_field_tag :city_query, params[:city_query] %>
@@ -19,7 +19,7 @@
 
 <footer class="footer">
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 columns hide-for-small">
       <p class="links">
         <% link_to "Home", root_path %>
         <% if !user_signed_in? %>
