@@ -1126,17 +1126,17 @@ $form-label-font-color: #ffffff;
 // 25. Reveal
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-reveal-classes: $include-html-classes;
+$include-html-reveal-classes: $include-html-classes;
 
 // We use these to control the style of the reveal overlay.
-// $reveal-overlay-bg: rgba($black, .45);
-// $reveal-overlay-bg-old: $black;
+// $reveal-overlay-bg: white;
+// $reveal-overlay-bg-old: black;
 
 // We use these to control the style of the modal itself.
-$reveal-modal-bg: white;
-$reveal-position-top: 0;
-$reveal-default-width: 80%;
-// $reveal-max-width: $row-width;
+// $reveal-modal-bg: white;
+// $reveal-position-top: 0;
+// $reveal-default-width: 80%;
+// $reveal-max-width: 50%;
 // $reveal-modal-padding: rem-calc(20);
 // $reveal-box-shadow: 0 0 10px rgba($black,.4);
 
@@ -1154,7 +1154,7 @@ $reveal-default-width: 80%;
 // We use these to control the modal border
 // $reveal-border-style: solid;
 // $reveal-border-width: 1px;
-// $reveal-border-color: $steel;
+// $reveal-border-color: black;
 
 // $reveal-modal-class: "reveal-modal";
 // $close-reveal-modal-class: "close-reveal-modal";

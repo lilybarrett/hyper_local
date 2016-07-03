@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $('#disclaimerModal').foundation('reveal', 'open')
+  $('#disclaimerModal').foundation('reveal', 'open');
 });
