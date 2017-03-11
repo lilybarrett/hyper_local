@@ -28,7 +28,8 @@ $accent-color: #ff851b;
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
   @media #{$small-only} {
-    border: none;
+    border: 0;
+    
     &:hover {
       box-shadow: none;
     }
