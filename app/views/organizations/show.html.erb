@@ -3,7 +3,7 @@
   <div class="row">
     <div class="small-12 small-centered columns">
       <div class="org-info">
-        <h1><%= @organization.name %></h1>
+        <h1 class="org-h1"><%= @organization.name %></h1>
         <p><%= @organization.cause.cause %></p>
         <p><%= @organization.description %></p>
         <p><%= @organization.street %>, <%= @organization.city %>, <%= @organization.state %></p>
@@ -13,8 +13,10 @@
 
   <% if Organization.org_admins(current_user, @organization) %>
     <div class="row">
-      <div class="small-6 small-centered columns button-row">
+      <div class="small-12 small-centered medium-6 medium-centered columns button-row text-center">
         <%= link_to "Edit Organization Info", edit_organization_path(@organization), class: "button round small org-button" %>
+      </div>
+      <div class="small-12 small-centered medium-6 medium-centered columns button-row text-center">
         <%= link_to "Add Opportunity", new_organization_opportunity_path(@organization), class: "button round small org-button" %>
       </div>
     </div>
@@ -22,7 +24,7 @@
 
   <div class="row">
     <div class="small-12 small-centered columns opp-info">
-      <h2><%= @organization.name %>'s Upcoming Volunteer Opportunities</h2>
+      <h2 class="org-h2"><%= @organization.name %>'s Upcoming Volunteer Opportunities</h2>
       <% if @opportunities.empty? %>
         <p>None</p>
       <% else %>

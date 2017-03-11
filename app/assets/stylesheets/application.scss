@@ -13,3 +13,10 @@
   width: 50%;
   height: 7%;
 }
+
+.top-bar-section .has-dropdown.moved > .dropdown {
+  @media #{$small-only} {
+    height: 200px;
+    width: 80%;
+  }
+}

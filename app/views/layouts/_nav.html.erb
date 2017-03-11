@@ -1,37 +1,36 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1 class="animated bounceIn"><%= link_to "HyperLocal", root_path %></h1>
+    </li>
 
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1 class="animated bounceIn"><%= link_to "HyperLocal", root_path %></h1>
-      </li>
+    <li class="toggle-topbar menu-icon">
+      <a href="/"><span>HyperLocal</span></a>
+    </li>
+  </ul>
 
-      <li class="toggle-topbar menu-icon">
-        <a href="/"><span>HyperLocal</span></a>
-      </li>
+  <section class="top-bar-section">
+    <ul class="right">
+        <li><%= link_to "View All Opportunities", opportunities_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+        <li class="has-dropdown">
+          <a href="#">
+            <% if current_user.profile_photo? %>
+              <%= image_tag current_user.profile_photo_url, class: 'nav-img' %>
+            <% end %>
+            <%= current_user.first_name %>
+          </a>
+          <ul class="dropdown">
+            <li class="drop-link"><%= link_to "My Profile", current_user %></li>
+            <li class="drop-link"><%= link_to "Edit Account", edit_user_registration_path %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
     </ul>
+  </section>
 
-    <section class="top-bar-section">
-      <ul class="right">
-          <li><%= link_to "View All Opportunities", opportunities_path %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-          <li class="has-dropdown">
-            <a href="#">
-              <% if current_user.profile_photo? %>
-                <%= image_tag current_user.profile_photo_url, class: 'nav-img' %>
-              <% end %>
-              <%= current_user.first_name %>
-            </a>
-            <ul class="dropdown">
-              <li class="drop-link"><%= link_to "My Profile", current_user %></li>
-              <li class="drop-link"><%= link_to "Edit Account", edit_user_registration_path %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li><%= link_to "Sign In", new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </section>
-
-  </nav>
+</nav>
