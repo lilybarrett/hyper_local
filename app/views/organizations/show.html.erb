@@ -3,7 +3,7 @@
   <div class="row">
     <div class="small-12 small-centered columns">
       <div class="org-info">
-        <h1 class="org-h1"><%= @organization.name %></h1>
+        <h1 class="org-header-tag"><%= @organization.name %></h1>
         <p><%= @organization.cause.cause %></p>
         <p><%= @organization.description %></p>
         <p><%= @organization.street %>, <%= @organization.city %>, <%= @organization.state %></p>
@@ -24,7 +24,7 @@
 
   <div class="row">
     <div class="small-12 small-centered columns opp-info">
-      <h2 class="org-h2"><%= @organization.name %>'s Upcoming Volunteer Opportunities</h2>
+      <h2 class="org-header-tag"><%= @organization.name %>'s Upcoming Volunteer Opportunities</h2>
       <% if @opportunities.empty? %>
         <p>None</p>
       <% else %>
