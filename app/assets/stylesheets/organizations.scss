@@ -1,4 +1,5 @@
 $accent-color: #ff851b;
+$white: #ffffff;
 
 .org-info {
   text-align: center;
@@ -11,7 +12,7 @@ $accent-color: #ff851b;
 
 .org-h1,
 .org-h2 {
-  color: #ffffff;
+  color: $white;
 }
 
 .button-row {
