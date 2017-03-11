@@ -4,6 +4,8 @@ ruby "2.3.1"
 
 gem 'rails', '4.2.5'
 
+gem 'uglifier', '~> 2.7', '>= 2.7.2'
+
 gem 'pg', '~> 0.15'
 
 gem 'sass-rails', '~> 5.0'
