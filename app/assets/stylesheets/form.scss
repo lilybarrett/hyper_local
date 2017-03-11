@@ -17,7 +17,7 @@ $accent-color: #ff851b;
   border: 2px solid $accent-color;
   color: $white;
   text-align: center;
-  margin: auto;
+  margin: 10px;
   margin-top: 10%;
   margin-bottom: 10%;
   padding: 15px 30px 0;
@@ -26,6 +26,12 @@ $accent-color: #ff851b;
   }
   &:hover {
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
+  }
+  @media #{$small-only} {
+    border: none;
+    &:hover {
+      box-shadow: none;
+    }
   }
 }
 
