@@ -12,6 +12,9 @@ $blue: #496d7b;
   &:hover {
     box-shadow: 10px 10px 10px 0px rgb(32, 64, 96);
   }
+  @media #{$small-only} {
+    border: 0;
+  }
 }
 
 .opp-div {
@@ -26,7 +29,7 @@ header {
   margin: 5%;
 }
 
-h1, h2 {
+h1.opportunity-h1, h2.opportunity-h2 {
   color: white;
   text-align: center;
 }

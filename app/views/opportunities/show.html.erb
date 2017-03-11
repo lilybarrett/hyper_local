@@ -1,21 +1,23 @@
 <div class="page-background">
 
     <div class="row">
-      <div class="small-6 medium-12 columns">
+      <div class="small-12 columns">
         <header>
-          <h1>Passionate about <%= @opportunity.organization.cause.cause %>?</h1>
-          <h2 id="org-name">Volunteer with <%= link_to @opportunity.organization.name, organization_path(@organization) %>!</h2>
+          <h1 class="opportunity-h1">Passionate about <%= @opportunity.organization.cause.cause %>?</h1>
+          <h2 class="opportunity-h2" id="org-name">Volunteer with <%= link_to @opportunity.organization.name, organization_path(@organization) %>!</h2>
         </header>
       </div>
     </div>
 
     <div class="row">
-      <div class="small-5 small-centered columns opp-button-row">
+      <div class="small-12 small-centered medium-5 medium-centered columns opp-button-row">
         <% if user_signed_in? %>
           <% unless @opportunity.users.count >= @opportunity.capacity %>
             <%= button_to "Join Us!", opportunity_volunteer_lists_path(@opportunity), class: "button large expand join-button join" %>
           <% else %>
-            <div class="at-capacity"><i>Event Is At Capacity</i></div>
+            <div class="at-capacity">
+              <i>Event Is At Capacity</i>
+            </div>
           <% end %>
           <% unless @volunteer_list.nil? %>
             <%= button_to "Can't Make It?", volunteer_list_path(@volunteer_list), method: :delete, class: "button large expand join-button" %>
@@ -25,7 +27,7 @@
     </div>
 
     <div class="row">
-      <div class="small-5 columns map-frame">
+      <div class="hide-for-small medium-5 columns map-frame">
         <iframe
           width="500"
           height="400"
@@ -33,7 +35,16 @@
           src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_MAPS_API_SERVER"]%>&q=<%= @opportunity.street%>,<%=@opportunity.city%>+<%=@opportunity.state%>" allowfullscreen>
         </iframe>
       </div>
-      <div class="small-4 columns opportunity-info">
+      <div class="show-for-small-only small-12 columns map-frame">
+        <iframe
+          width="290"
+          height="210"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_MAPS_API_SERVER"]%>&q=<%= @opportunity.street%>,<%=@opportunity.city%>+<%=@opportunity.state%>" allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="hide-for-small-only medium-4 columns opportunity-info">
         <p>
           <strong>What It's All About:</strong>
         </p>
@@ -60,18 +71,45 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="small-12 columns vol-panel">
-        <ul class="small-block-grid-5 vol-grid">
-          <p><strong>Volunteers</strong></p>
-            <% @volunteers.each do |volunteer| %>
-              <li>
-                <%= image_tag volunteer.profile_photo_url, class: 'vol-img' %>
-              <span class="label"><%= volunteer.first_name %> <%= volunteer.last_name.first %>.</span>
-              </li>
-            <% end %>
-          </ul>
+    <div class="show-for-small-only row">
+      <div class="small-12 columns opportunity-info">
+        <p>
+          <strong>What It's All About:</strong>
+        </p>
+        <p>
+          <%= @opportunity.description %>
+        </p>
+
+        <p>
+          <strong>Capacity:</strong> <%= @opportunity.capacity %>
+        </p>
+
+        <p>
+          <strong>Date:</strong> <%= @opportunity.date.strftime("%m/%d/%Y") %>
+        </p>
+        <p>
+          <strong>Time:</strong> <%= @opportunity.start_time.strftime("%I:%M%p") %>-<%= @opportunity.end_time.strftime("%I:%M%p") %>
+        </p>
+        <p>
+          <strong>Location:</strong>
+        </p>
+        <p>
+          <%= @opportunity.street %>, <%= @opportunity.city %>, <%= @opportunity.state %>
+        </p>
       </div>
     </div>
 
+  <div class="hide-for-small row">
+    <div class="medium-12 columns vol-panel">
+      <ul class="medium-block-grid-5 vol-grid">
+        <p><strong>Volunteers</strong></p>
+          <% @volunteers.each do |volunteer| %>
+            <li>
+              <%= image_tag volunteer.profile_photo_url, class: 'vol-img' %>
+            <span class="label"><%= volunteer.first_name %> <%= volunteer.last_name.first %>.</span>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
 </div>

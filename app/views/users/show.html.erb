@@ -1,8 +1,8 @@
 <div class="page-background">
 
   <div class="row">
-    <div class="small-5 columns personal-panel">
-        <h3><strong>Personal Information</strong></h3>
+    <div class="small-12 medium-5 columns personal-panel">
+        <h3 class="user-h3"><strong>Personal Information</strong></h3>
         <div class="user-info">
           <%= image_tag current_user.profile_photo_url, class: 'profile-page-img' %>
           <p>Full name: <%= @user.first_name %> <%= @user.last_name %></p>
@@ -10,16 +10,16 @@
           <p><%= link_to "Edit My Information", edit_user_registration_path, class: "button round small edit-info" %></p>
         </div>
     </div>
-    <div class="small-5 columns my-opportunities">
+    <div class="small-12 medium-5 columns my-opportunities">
       <% if !current_user.volunteer? %>
-        <h3>My Organizations</h3>
+        <h3 class="user-h3">My Organizations</h3>
           <% @organizations.each do |organization| %>
           <div class="orgs-list">
             <p><%= link_to organization.name, organization_path(organization) %></p>
           </div>
           <% end %>
       <% else %>
-        <h3>Reminder: Upcoming Activities</h3>
+        <h3 class="user-h3">Reminder: Upcoming Activities</h3>
         <ul>
           <% @opportunities.each do |opportunity| %>
           <div class="joined-opp">
