@@ -56,6 +56,7 @@ $accent-color: #ff851b;
        1px -1px 0 $black,
       -1px 1px 0 $black,
        1px 1px 0 $black;
+       
     @media #{$small-only} {
       font-size: 2em;
     }
